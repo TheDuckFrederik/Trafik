@@ -4,6 +4,8 @@
 
 All amounts are **USD planning estimates as of 30 September 2026**, before sales tax and shipping. They are not live quotes; retailer stock, shipping, tax, and regional pricing vary. The base estimate uses a mix of low-volume parts from Tayda Electronics and a standard enclosure from a Hammond/1590-series retailer. For safety-critical fit and electrical ratings, use the specified part class rather than selecting on price alone.
 
+This BOM prices the Option B (relay-based) implementation described in [architecture.md](architecture.md#circuit-design-principles) and in each variant's "Hardware implementation (Option B)" section. For the part-category specification these line items reference (including the Option A mechanical alternative, which needs no relays, control PCB, or footswitches), see [electronics-reference.md](electronics-reference.md).
+
 Prices assume single-unit DIY builds. Tools, labor, finishing, custom PCB fabrication, and an external 9 V pedalboard supply are excluded. Add 15% to the material subtotal as a sourcing reserve for shipping, small-quantity price changes, and incidental hardware.
 
 ## Parts common to all models
@@ -19,6 +21,8 @@ Prices assume single-unit DIY builds. Tools, labor, finishing, custom PCB fabric
 | Hook-up wire | 24–26 AWG stranded insulated wire; shielded audio cable for longer/high-impedance runs | Tayda; Mouser/DigiKey; local electronics supplier | Variant estimate below |
 | DC input jack | 2.1 mm barrel, center-negative panel jack | Tayda; Mouser/DigiKey | $2.00 |
 | Fasteners/insulation | Jack nuts, switch nuts, PCB standoffs, insulating washers, heat-shrink | Tayda; local hardware supplier | Variant estimate below |
+
+Every part category above is defined in full, including the Option A mechanical-switch equivalents not priced here, in [electronics-reference.md](electronics-reference.md).
 
 Use a regulated, isolated, center-negative 9 V supply rated for at least 100 mA as a separate pedalboard supply. Confirm the assembled circuit’s actual current draw before choosing the supply. A suitable external adapter typically adds approximately **$15–30**; it is not included in the totals.
 
