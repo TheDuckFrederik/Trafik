@@ -4,6 +4,8 @@
 
 Single Lane Trafik has the two independently controlled pedal-loop positions and one fixed device path. It omits only the device/lane selector and lane indicators.
 
+> **Separate bench prototype:** [single-loop-prototype.md](single-loop-prototype.md) documents an earlier, simpler one-loop buffer/relay circuit. It is not the complete Single Lane Trafik routing design described on this page.
+
 ## Connections and physical layout
 
 Starting enclosure: approximately 1590B-class, subject to a full-size fit check. Use eight isolated mono ¼-inch TS jacks:
