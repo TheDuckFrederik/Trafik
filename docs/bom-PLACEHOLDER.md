@@ -4,7 +4,7 @@
 
 All amounts are **USD planning estimates as of 30 September 2026**, before sales tax and shipping. They are not live quotes; retailer stock, shipping, tax, and regional pricing vary. The base estimate uses a mix of low-volume parts from Tayda Electronics and a standard enclosure from a Hammond/1590-series retailer. For safety-critical fit and electrical ratings, use the specified part class rather than selecting on price alone.
 
-This BOM prices the Option B (relay-based) implementation described in [architecture.md](architecture.md#circuit-design-principles) and in each variant's "Hardware implementation (Option B)" section. For the part-category specification these line items reference (including the Option A mechanical alternative, which needs no relays, control PCB, or footswitches), see [electronics-reference.md](electronics-reference.md).
+This is an illustrative budget for the single hardware-only implementation described in [architecture.md](architecture.md#hardware-control-and-switching). For the shared component categories and selection constraints, see [electronics-reference.md](electronics-reference.md). Prices are not vendor quotes; confirm live stock, datasheets, and dimensions before ordering.
 
 Prices assume single-unit DIY builds. Tools, labor, finishing, custom PCB fabrication, and an external 9 V pedalboard supply are excluded. Add 15% to the material subtotal as a sourcing reserve for shipping, small-quantity price changes, and incidental hardware.
 
@@ -14,7 +14,7 @@ Prices assume single-unit DIY builds. Tools, labor, finishing, custom PCB fabric
 | --- | --- | --- | ---: |
 | Audio jack | ¼-inch mono TS, isolated or insulated-body type, solder-lug | Tayda; Mouser/DigiKey (Neutrik/Rean); Switchcraft | $2.00 |
 | Momentary footswitch | Latching-free, normally-open SPST contact, rugged stomp switch | Tayda; Musikding; Mouser (mechanical equivalents) | $10.00 |
-| Signal relay | DPDT, non-latching, 9 V coil, low-level audio contact rating, sealed preferred | Mouser/DigiKey (Omron, Panasonic, signal-relay equivalents) | $2.20 |
+| Signal relay | Contact form/quantity determined from completed matrix; 9 V coil only when datasheet permits | Mouser/DigiKey (Omron, Panasonic, equivalents) | $2.20 allowance |
 | Control components | CMOS counter, debounce/timing parts, logic, relay-driver transistors, protection diodes, resistors and capacitors | Mouser/DigiKey; Tayda for common passives | Included in board/passives lines |
 | Indicator LED | 3 mm or 5 mm, diffused, color per panel legend | Tayda; Mouser/DigiKey | $0.30 |
 | Control PCB | Through-hole fixed-function control and driver board, sized to variant relay count | Low-volume PCB fabrication; hand-wired perfboard alternative | Variant estimate below |
@@ -22,9 +22,9 @@ Prices assume single-unit DIY builds. Tools, labor, finishing, custom PCB fabric
 | DC input jack | 2.1 mm barrel, center-negative panel jack | Tayda; Mouser/DigiKey | $2.00 |
 | Fasteners/insulation | Jack nuts, switch nuts, PCB standoffs, insulating washers, heat-shrink | Tayda; local hardware supplier | Variant estimate below |
 
-Every part category above is defined in full, including the Option A mechanical-switch equivalents not priced here, in [electronics-reference.md](electronics-reference.md).
+The electronics reference gives the required part specifications and warns which quantities remain provisional.
 
-Use a regulated, isolated, center-negative 9 V supply rated for at least 100 mA as a separate pedalboard supply. Confirm the assembled circuit’s actual current draw before choosing the supply. A suitable external adapter typically adds approximately **$15–30**; it is not included in the totals.
+Use a regulated, isolated, center-negative 9 V supply. No fixed current rating is specified until relay models and the maximum energized-coil count are known. Calculate worst-case current from the selected data sheets and verify by measurement before selecting a supply. A suitable external adapter is budgeted at approximately **$15–30** and is not included in the totals.
 
 ## Single Lane Trafik
 
@@ -35,7 +35,7 @@ Eight TS jacks: Instrument IN, TO 1, FX Send 1, FX Return 1, and Loop A/B Send/R
 | 1590B-size aluminum enclosure or equivalent | 1 | $35.00 | $35.00 |
 | ¼-inch TS mono jacks | 8 | $2.00 | $16.00 |
 | Momentary footswitches | 2 | $10.00 | $20.00 |
-| DPDT audio signal relays | 10 | $2.20 | $22.00 |
+| Signal relays (preliminary allowance; see note) | 10 | $2.20 | $22.00 |
 | CMOS control/driver PCB | 1 | $22.00 | $22.00 |
 | Discrete logic, drivers, protection and passives | 1 lot | $10.00 | $10.00 |
 | Indicator LEDs | 8 | $0.30 | $2.40 |
@@ -55,7 +55,7 @@ Eleven TS jacks: Instrument IN, TO 1–2, FX Send/Return 1–2, and Loop A/B Sen
 | 1590DD-size aluminum enclosure or equivalent | 1 | $42.00 | $42.00 |
 | ¼-inch TS mono jacks | 11 | $2.00 | $22.00 |
 | Momentary footswitches | 3 | $10.00 | $30.00 |
-| DPDT audio signal relays | 14 | $2.20 | $30.80 |
+| Signal relays (preliminary allowance; see note) | 14 | $2.20 | $30.80 |
 | CMOS control/driver PCB | 1 | $28.00 | $28.00 |
 | Discrete logic, drivers, protection and passives | 1 lot | $13.00 | $13.00 |
 | Indicator LEDs | 10 | $0.30 | $3.00 |
@@ -75,7 +75,7 @@ Seventeen TS jacks: Instrument IN, TO 1–4, FX Send/Return 1–4, and Loop A/B 
 | 1590XX-size aluminum enclosure or equivalent | 1 | $58.00 | $58.00 |
 | ¼-inch TS mono jacks | 17 | $2.00 | $34.00 |
 | Momentary footswitches | 3 | $10.00 | $30.00 |
-| DPDT audio signal relays | 22 | $2.20 | $48.40 |
+| Signal relays (preliminary allowance; see note) | 22 | $2.20 | $48.40 |
 | CMOS control/driver PCB | 1 | $34.00 | $34.00 |
 | Discrete logic, drivers, protection and passives | 1 lot | $18.00 | $18.00 |
 | Indicator LEDs | 12 | $0.30 | $3.60 |
@@ -88,11 +88,11 @@ Seventeen TS jacks: Instrument IN, TO 1–4, FX Send/Return 1–4, and Loop A/B 
 
 ## Shared vs. variant-specific parts
 
-**Shared:** TS audio-jack type; four Loop A/B jacks; two loop-position footswitches; four loop-state LEDs per position; DC input; CMOS debounce/counter/decoder approach; relay driver and protection parts; wiring and mounting consumables.
+**Shared:** isolated TS jack type and four loop jacks; two loop-position footswitches; eight loop-state LEDs and resistors; 9 V input/protection/decoupling; fixed-function CMOS debounce/counters; relay drivers and protection parts; wire and mounting consumables.
 
 **Variant-specific:** enclosure size; TO and device FX jack counts; lane-selection counter and center footswitch for 2/4 Lane; lane indicator count; control-board capacity; number of signal relays and wiring. Single Lane omits the device-selection hardware.
 
-The relay counts and control-PCB prices above are budgeting allowances for the described switching functions, not a manufacturer-specific circuit design or a final relay pin-for-pin netlist. Before ordering, select the actual relay model and verify its contact configuration against the final wiring matrix; increase quantities for spares if the build is your first relay assembly.
+The relay counts and control-PCB prices above are budgeting allowances only. The repository does not yet contain a validated relay contact matrix, manufacturer-specific schematic, or PCB design, so these quantities cannot be treated as a complete build BOM. Before ordering, complete and independently check the contact-level design, select the actual relay, recalculate the relay/driver/board quantities, and add spares if appropriate. The listed subtotal will change when that design is completed.
 
 ## Retailer comparison and alternatives
 
@@ -111,8 +111,8 @@ For jack alternatives, choose insulated-body TS jacks to simplify sleeve-ground 
 
 | Variant | Material subtotal | With 15% reserve | Add external supply if needed |
 | --- | ---: | ---: | ---: |
-| Single Lane | $142.40 | $163.76 | +$15–30 |
-| 2 Lane | $188.80 | $217.12 | +$15–30 |
-| 4 Lane | $254.00 | $292.10 | +$15–30 |
+| Single Lane | $142.40 | $163.76 | +$15–30, after calculating supply current |
+| 2 Lane | $188.80 | $217.12 | +$15–30, after calculating supply current |
+| 4 Lane | $254.00 | $292.10 | +$15–30, after calculating supply current |
 
-These totals exclude taxes, tools, labor, finishing, and custom fabrication. The enclosure sizes are starting points only: confirm actual component dimensions, jack clearance, and footswitch spacing before purchase.
+These totals exclude taxes, tools, labor, finishing, custom fabrication, and any added parts revealed by the completed contact-level design. They are estimates rather than complete final build totals. Enclosure sizes are starting points only: confirm actual component dimensions, jack clearance, and footswitch spacing before purchase.

@@ -2,109 +2,54 @@
 
 ## Purpose
 
-The 4 Lane Trafik is the full product configuration: four selectable device paths, two independently controlled pedal-loop positions, and a center lane-selection footswitch. It uses the three-foot-switch layout established for the family.
+4 Lane Trafik is the largest family variant. It selects one of four device paths and provides the same two independently controlled pedal-loop positions as the other models.
 
-## Panel layout and connections
+## Connections and physical layout
 
-Use a metal enclosure approximately 1590XX size or equivalent, subject to a full-size fit check.
+Starting enclosure: approximately 1590XX-class, subject to a full-size fit check with every intended plug installed. Use seventeen isolated mono ¼-inch TS jacks:
 
-- Right side: one **Instrument IN** jack.
-- Top-left bank: **FX Return 1–4**.
-- Top-right bank: **FX Send 1–4**.
-- Left side: Loop B Send/Return in the upper position and Loop A Send/Return below it.
-- Bottom bank: **TO 1–4**.
-- Across the middle: left **Pre-FX**, center **Device**, right **Pre-TO** momentary footswitches.
-- Indicators: four loop-state indicators for each pedal position near the TO bank and between the FX banks; four device-lane indicators beside the center switch.
-- DC input on a side panel, away from audio conductors.
+| Count | Jack labels |
+| ---: | --- |
+| 1 | Instrument IN |
+| 4 | TO 1, TO 2, TO 3, TO 4 |
+| 4 | FX Return 1–4 |
+| 4 | FX Send 1–4 |
+| 2 | Loop A Send / Return |
+| 2 | Loop B Send / Return |
 
-There are seventeen audio jacks total: Instrument IN, four TO outputs, eight device FX jacks, and four pedal-loop jacks. Use mono ¼-inch TS connectors. Panel labeling and jack direction follow the [architecture](architecture.md).
+Keep Instrument IN on the right; FX Returns at the upper left; FX Sends at the upper right; Loop B above Loop A on the left; and TO 1–4 along the bottom. Arrange Pre-FX, Device, and Pre-TO footswitches across the center. Provide four state LEDs for each loop position, four lane LEDs, and clearance for the 9 V DC jack/control board. The large circles on the physical layout represent footswitches, not routing nodes.
 
-The three large middle circles in the agreed layout are the footswitches. The small rectangles beside the TO bank and between the FX banks are pedal-loop state indicators; they are not audio connections.
+## Signal flow and controls
 
-## Routing
+For selected lane `n`:
 
-The selected lane is the only connected device path:
-
-`Instrument IN → Pre-FX position → TO n → device n input`
-
-`device n FX Send → FX Return n → Pre-TO position → FX Send n → device n FX Return`
-
-The center switch selects lane 1, 2, 3, or 4; only the corresponding TO output and FX pair are connected. All other lane jacks remain isolated. Each outer switch selects Off, Loop A, Loop B, or A→B at its signal position. Loop A is first in the series chain. Each physical loop can appear at only one position; if both positions request it, Pre-FX has priority and the indicator reports the actual applied state.
-
-## Footswitch and LED behavior
-
-- **Left / Pre-FX:** first press A; second B; third A→B; fourth Off; repeat.
-- **Center / Device:** selects 1 → 2 → 3 → 4 → 1.
-- **Right / Pre-TO:** first press A; second B; third A→B; fourth Off; repeat.
-
-Each loop position has four state indicators labeled Off, A, B, and A→B. Four lane indicators identify the selected device path. Only the active state/lane is lit. At power-up, both loop positions reset Off and lane 1 is selected.
-
-## Circuit Design
-
-This section documents **Option A (mechanical stepping switch, default)**. See [architecture.md](architecture.md#circuit-design-principles) for the Option A/B distinction and shared conventions, and the "Hardware implementation" section below for Option B (relay-based).
-
-### Signal path
-
-```mermaid
-flowchart LR
-    IN["Instrument IN"] --> PREFX["Pre-FX loop select\n(rotary SW1)"]
-    PREFX --> DEVOUT["Device select\n(rotary SW3, TO leg)"]
-    DEVOUT --> TO1["TO 1"]
-    DEVOUT --> TO2["TO 2"]
-    DEVOUT --> TO3["TO 3"]
-    DEVOUT --> TO4["TO 4"]
-    FXR1["FX Return 1"] --> DEVRET["Device select\n(rotary SW3, Return leg)"]
-    FXR2["FX Return 2"] --> DEVRET
-    FXR3["FX Return 3"] --> DEVRET
-    FXR4["FX Return 4"] --> DEVRET
-    DEVRET --> PRETO["Pre-TO loop select\n(rotary SW2)"]
-    PRETO --> DEVSEND["Device select\n(rotary SW3, Send leg)"]
-    DEVSEND --> FXS1["FX Send 1"]
-    DEVSEND --> FXS2["FX Send 2"]
-    DEVSEND --> FXS3["FX Send 3"]
-    DEVSEND --> FXS4["FX Send 4"]
-    PREFX --- LAB["Loop A / Loop B Send-Return"]
-    PRETO --- LAB
+```text
+Instrument IN → Pre-FX loop position → TO n → device n input
+device n FX Send → FX Return n → Pre-TO loop position → FX Send n → device n FX Return
 ```
 
-### Loop switch logic table (SW1 = Pre-FX, SW2 = Pre-TO)
+Only lane `n` is connected; every other TO and FX tip is isolated. The center momentary normally-open footswitch cycles lane 1 → 2 → 3 → 4 → 1. Each outer switch independently cycles Off → A → B → A→B → Off, with Loop A first in the series state.
 
-Identical to the Single Lane loop-select stage — see [single-lane-PLACEHOLDER.md](single-lane-PLACEHOLDER.md#switch-logic-table-per-position-sw1--pre-fx-sw2--pre-to) for the full 4-position table. Each position uses one 4-position, minimum 3-pole, non-shorting rotary switch (3P4T).
+The physical Loop A/B jacks are shared between the two positions. If both request the same loop, Pre-FX takes priority, and Pre-TO applies only loops not already assigned to Pre-FX. LEDs indicate applied routing. See [architecture.md](architecture.md#loop-states-and-assignment) for the exact allocation rule.
 
-### Device (lane) switch logic table (SW3)
+| Device-switch press | Selected lane | Lane LED |
+| ---: | --- | --- |
+| Power-on reset | 1 | Lane 1 |
+| 1 | 2 | Lane 2 |
+| 2 | 3 | Lane 3 |
+| 3 | 4 | Lane 4 |
+| 4 | 1 | Lane 1 |
 
-The device selector is one **4-position, minimum 3-pole (3P4T)** non-shorting rotary switch (same class of part as the loop-select switches, wired for a different function). Three ganged poles move together:
+## Electronics and power
 
-| Position | Pole 1 (TO) | Pole 2 (FX Return, into Pre-TO) | Pole 3 (FX Send, from Pre-TO) | Lane LED |
-| --- | --- | --- | --- | --- |
-| 1 | Pre-FX output → TO 1 | FX Return 1 → Pre-TO input | Pre-TO output → FX Send 1 | Lane 1 |
-| 2 | Pre-FX output → TO 2 | FX Return 2 → Pre-TO input | Pre-TO output → FX Send 2 | Lane 2 |
-| 3 | Pre-FX output → TO 3 | FX Return 3 → Pre-TO input | Pre-TO output → FX Send 3 | Lane 3 |
-| 4 | Pre-FX output → TO 4 | FX Return 4 → Pre-TO input | Pre-TO output → FX Send 4 | Lane 4 |
+Use the shared fixed-function CMOS/relay implementation described in [architecture.md](architecture.md#hardware-control-and-switching): two debounced four-state loop counters, a modulo-4 lane counter, relay drivers/contact groups, twelve state/lane LEDs with individual resistors, and common 9 V input/protection/decoupling parts. There is no microcontroller, firmware, or software-controlled switching.
 
-Break-before-make contacts are required so no two TO outputs (or FX Send outputs) are ever briefly joined during a position change.
+Lane selection must switch TO, FX Return, and FX Send as one selection, break-before-make, and leave unselected lane tips isolated. The contact network must implement the duplicate-loop allocation rule and the documented unpowered lane-1/bypass state. Relay/contact quantities and terminal pinouts cannot be finalized from generic DPDT descriptions; complete and verify the manufacturer-specific contact matrix before board layout. See [electronics-reference.md](electronics-reference.md) for selection criteria and [build-guide.md](build-guide.md) for fabrication and checkout.
 
-### Electronics needed
+## Estimated materials
 
-- 3 × 4-position, minimum 3-pole, non-shorting rotary switch (2 for loop select, 1 for device select — all the same part class, wired differently).
-- 17 × mono ¼-inch TS jack (Instrument IN, TO 1–4, FX Send 1–4, FX Return 1–4, Loop A/B Send/Return).
-- 12 × indicator LED (4 per loop position + 4 lane LEDs) with series resistors.
-- Optional: 9 V battery or DC jack, only if LEDs are fitted.
+See the [BOM](bom-PLACEHOLDER.md) for category-level quantities and retailer examples. Its relay/control-board quantities are preliminary allowances, not a validated netlist-based count. The estimate is $254.00 before tax and shipping ($292.10 including a 15% reserve); it excludes tools, labor, and an external supply. Recalculate it after the contact-level circuit is complete.
 
-See [electronics-reference.md](electronics-reference.md) for full specifications and this variant's exact quantities.
+## Acceptance checks
 
-### LED wiring (Option A)
-
-Loop-position LEDs follow the same table as [Single Lane](single-lane-PLACEHOLDER.md#led-wiring-option-a). Lane LEDs are wired to SW3's spare deck, one contact per lane, all the same color (white/blue), with only the selected lane's LED lit at a time.
-
-## Hardware implementation (Option B — relay-based, alternative)
-
-Use debounced momentary footswitches, fixed-function CMOS counters and decoders, transistor relay drivers, and low-level audio relays. The lane counter wraps after lane 4. Use relay groups to switch each lane’s TO and FX pair as one selection, with break-before-make behavior. Unselected lanes must remain isolated. The loop allocation interlock is required to prevent either pedal chain being inserted into both signal paths; derive the state LEDs from the interlocked outputs. Relay contacts provide a passive audio path; the 9 V supply operates only logic and coils.
-
-## Build quantity and estimate
-
-See the [BOM](bom-PLACEHOLDER.md) for line-item parts and retailer alternatives. The current planning estimate is **$254.00** before tax/shipping and **$292.10** with a 15% sourcing reserve. This estimate excludes tools, labor, and an external pedalboard power supply.
-
-## Checkout
-
-Verify every lane’s TO and corresponding FX route individually. Confirm the other three lanes remain isolated during each selection, then check both loop cycles, loop ordering, allocation interlock, indicators, power-up reset, and unpowered bypass. Complete the [build guide](build-guide.md) before connecting amplifiers or pedals.
+Verify all four lanes' paired TO/FX paths and isolation of every unselected lane; all loop states, ordering, duplicate-loop priority and applied LEDs; lane counter wraparound; break-before-make switching; and bypass/lane-1 behavior on power loss. Follow the [build guide](build-guide.md) before connecting devices.

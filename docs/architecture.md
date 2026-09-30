@@ -60,6 +60,15 @@ Applied Pre-FX: A1, B1
 Applied Pre-TO: A2 AND NOT A1, B2 AND NOT B1
 ```
 
+This gives the following applied Pre-TO state for every request pair; Pre-FX always keeps its requested state:
+
+| Pre-FX request ↓ / Pre-TO request → | Off | A | B | A→B |
+| --- | --- | --- | --- | --- |
+| Off | Off | A | B | A→B |
+| A | Off | Off | B | B |
+| B | Off | A | Off | A |
+| A→B | Off | Off | Off | Off |
+
 The applied LED state may therefore differ from the Pre-TO requested state during a conflict. The control/relay design must implement this allocation before driving both the audio contacts and state LEDs. A loop request at Pre-TO must not connect that loop's send/return if the same loop is applied at Pre-FX.
 
 ## Hardware control and switching
@@ -80,7 +89,7 @@ For example, 9 V, a 2 V LED drop, and 5 mA gives 1.4 kΩ; use a suitable standar
 
 ## Power, grounding, and wiring
 
-- Use a regulated, isolated 9 V DC pedal supply, 2.1 mm center-negative connector, with current capacity above the measured worst-case draw. The current draw depends on the chosen relay coil resistance and the number energized simultaneously; calculate it from the relay datasheet, then measure the completed build. The existing BOM's 100 mA suggestion is not sufficient evidence for a relay design.
+- Use a regulated, isolated 9 V DC pedal supply, 2.1 mm center-negative connector, with current capacity above the measured worst-case draw. The current draw depends on the chosen relay coil resistance and the number energized simultaneously; calculate it from the relay datasheet, then measure the completed build. Do not select a supply based on an unverified generic current figure.
 - Add reverse-polarity protection, local supply decoupling at each logic IC, and coil suppression appropriate to the driver circuit. Confirm that the protection device's voltage drop still leaves adequate relay pull-in voltage.
 - Prefer isolated TS jacks. Bond jack sleeves together at a single audio-ground point; bond the enclosure to that point once. Return logic and coil current to the supply-ground star separately from the audio-return wiring, joining them at the defined star point. Do not use the enclosure as the normal audio-current return.
 - Keep high-impedance audio runs short and separate from clocks, LED leads, and coil wiring. Use shielded cable for long/noisy runs and connect its shield at the planned audio-ground end to avoid multiple shield bonds.
