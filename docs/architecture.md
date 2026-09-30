@@ -2,84 +2,94 @@
 
 ## Product family
 
-Trafik routes instrument-level audio through two external pedal loops and, on the multi-lane models, to one selected device lane. “Lane” means one destination/device position, not a stereo channel. All models use mono, unbalanced, ¼-inch TS audio connections.
+Trafik is a passive, mono instrument-level audio router. Its audio is switched by electromechanical signal relays; fixed-function CMOS circuitry handles momentary footswitches, state decoding, and relay drivers. There is no firmware, microcontroller, programmable logic, or software-controlled audio switching.
 
-| Model | Device lanes | Footswitches | Pedal-loop controls |
-| --- | ---: | ---: | --- |
-| Single Lane | 1 | 2 | Pre-FX and Pre-TO |
-| 2 Lane | 2 | 3 | Pre-FX and Pre-TO |
-| 4 Lane | 4 | 3 | Pre-FX and Pre-TO |
+| Model | Device lanes | Audio jacks | Footswitches |
+| --- | ---: | ---: | ---: |
+| Single Lane Trafik | 1 | 8 | 2 |
+| 2 Lane Trafik | 2 | 11 | 3 |
+| 4 Lane Trafik | 4 | 17 | 3 |
 
-Trafik can be built with either of two audio-switching implementations, described fully in [Circuit Design Principles](#circuit-design-principles) below: a default, all-mechanical rotary-switch design with no control electronics, or an alternative relay-based design using latching/non-latching electromechanical signal relays driven by fixed-function CMOS logic (momentary footswitches advance hardware counters; relay contacts carry audio). Neither option uses a microcontroller, programmable logic, or firmware. The relay option requires a regulated 9 V DC pedal supply for control and relay coils; the mechanical option requires no power for switching and, at most, a small DC/battery supply for LEDs. The audio signal is always passive and separate from any control power except through switch/relay contacts.
+The Single Lane model omits only the device/lane selector. It has the same two loop-position controls and loop states as the other models.
 
-## Panel and connector convention
+## Signal and panel conventions
 
-- **Instrument IN:** instrument signal input.
-- **TO 1…N:** output to the selected device’s instrument input. Only the selected lane is connected.
-- **FX Return 1…N:** input from the selected device’s FX Send.
-- **FX Send 1…N:** output to that device’s FX Return.
-- **Loop A Send / Return** and **Loop B Send / Return:** connect the corresponding external pedal chain. Send is an output from Trafik; Return is an input to Trafik.
+All audio connectors are mono, unbalanced ¼-inch TS. “Send” and “Return” are named from Trafik's point of view:
 
-For each lane, connect the amplifier/device FX Send to Trafik’s matching **FX Return**, and Trafik’s matching **FX Send** to the amplifier/device FX Return. This direction convention is stated from Trafik’s point of view and avoids swapping the send and return cables.
+| Label | Direction |
+| --- | --- |
+| Instrument IN | Input from instrument |
+| TO 1…N | Output to the selected device's instrument input |
+| FX Return 1…N | Input from the selected device's FX Send |
+| FX Send 1…N | Output to the selected device's FX Return |
+| Loop A/B Send | Output to the external pedal chain |
+| Loop A/B Return | Input from the external pedal chain |
 
-The physical arrangement is Instrument IN on the right; FX Return bank upper left; FX Send bank upper right; Loop B above Loop A on the left; TO bank along the bottom; and footswitches across the center. Loop-state indicators sit near the TO bank and between the FX banks. The large circles shown in the middle are the three footswitches, not jacks or routing nodes.
+Connect a device's FX Send to the matching Trafik FX Return, and Trafik's matching FX Send to the device FX Return.
 
-## Circuit Design Principles
-
-Trafik supports two interchangeable ways to implement the four-state loop selection and (on multi-lane models) the lane selection. Both use only passive/electromechanical parts — neither uses a microcontroller or firmware. Pick one option per unit; do not mix them within the same loop-select or lane-select stage.
-
-- **Option A — Mechanical stepping switch (default/simplest).** A non-shorting (break-before-make), multi-pole, multi-throw rotary switch performs the routing directly with its contacts; the shaft position **is** the state. There is no control power required for switching, and the unit can be built and used with **no DC supply and no battery at all** if the LEDs are omitted or replaced with passive continuity lamps. This is the recommended starting point for a first, all-passive build.
-- **Option B — Relay-based (alternative, for quieter switching).** Latching or non-latching DPDT signal relays carry the audio; fixed-function CMOS counters/decoders (not a microcontroller — no programmable logic and no firmware) advance on each footswitch press and drive the relay coils through transistor drivers. This avoids the small amount of switch noise and shaft wear a rotary switch can introduce, at the cost of requiring a regulated 9 V DC supply for the control circuit at all times. The remainder of this document (Signal paths, Footswitch and indicator logic below, and the [build guide](build-guide.md)) describes Option B in full; the variant documents describe Option A in the same level of detail.
-
-Both options share the following common building blocks, reused identically across all three variants:
-
-- **Loop-select stage.** Each Pre-FX/Pre-TO position is a single 4-state insert stage: Off (straight through), Loop A only, Loop B only, or Loop A → Loop B in series. In Option A this is one non-shorting rotary switch per position (minimum 3 poles × 4 throws: one pole carries the incoming signal to the correct next node, one carries Loop A Return onward, one carries Loop B Return onward; a spare deck, if present, can carry LED commons). In Option B it is a bank of DPDT relays selected by the counter/decoder output for that state. See [electronics-reference.md](electronics-reference.md) for the exact switch/relay specification.
-- **Jack conventions.** TS mono jacks throughout; Send is an output from Trafik, Return is an input to Trafik; direction is always stated from Trafik's point of view (see above).
-- **Grounding scheme.** Use insulated-body or isolated jacks and bond every jack sleeve to a single star ground point together with the switch/relay common return and the enclosure. Do not let jack bodies create a second, parallel ground path through the enclosure metal.
-- **LED convention.** One LED per loop-select state (Off, A, B, A→B) and, on 2/4 Lane models, one LED per lane. Colors: **green = Loop A engaged**, **red = Loop B engaged**, **amber/bi-color (green+red together) = Loop A→B**, **unlit = Off**; lane LEDs are a single color (e.g. white or blue) with only the selected lane's LED lit. In Option A, each LED (with its own series resistor) is wired straight to the rotary switch throw contact for its state/lane, so the switch position lights the LED with no decoding logic. In Option B, LEDs are driven from the applied-state decoder outputs (after the loop-allocation interlock), not from the raw counter, so the display always matches the audio path actually in circuit.
-- **Power convention.** Option A needs no power for switching; if LEDs are fitted, they can run from either a 9 V battery (isolated, switched or wired through the input jack's switching contact to save battery life) or a external 9 V DC supply. Option B always needs an external, regulated, isolated, center-negative 9 V DC supply (2.1 mm barrel) rated for the measured relay-coil and logic current, because the counters must stay powered to hold state. A build that uses Option A with a battery, or with no LEDs at all, requires no DC jack.
+Physical layout names are fixed: Instrument IN at the right, FX Return bank at the upper left, FX Send bank at the upper right, Pedal Loop B above Pedal Loop A on the left, and TO outputs at the bottom. The large circles in the layout are footswitches, never jacks or routing nodes. On the multi-lane models, the device selector is the center footswitch; Pre-FX and Pre-TO are the outer footswitches.
 
 ## Signal paths
 
-In the selected lane, the main instrument path is:
+For selected lane `n`:
 
-`Instrument IN → Pre-FX loop position → selected TO output → device input`
+```text
+Instrument IN → Pre-FX loop position → TO n → device n input
+device n FX Send → FX Return n → Pre-TO loop position → FX Send n → device n FX Return
+```
 
-The device FX path is:
+Only the selected lane's TO output and corresponding FX pair connect to the audio paths. Unselected lane tips are isolated. The audio circuit carries instrument-level signals only; it is not suitable for speaker outputs or mains voltage.
 
-`device FX Send → selected FX Return input → Pre-TO loop position → selected FX Send output → device FX Return`
+## Loop states and assignment
 
-Unselected lane outputs and FX jacks are electrically isolated by relay contacts. The loop selector inserts Loop A, Loop B, both in series (A first, then B), or neither at its assigned position. A loop not selected at either position is bypassed.
+Each position has its own momentary footswitch and requested state. Presses cycle independently:
 
-Each physical pedal loop can occupy only one signal position at a time. If a loop is requested at both positions, the Pre-FX position has priority and the loop is excluded from Pre-TO; indicators show the applied routing. This interlock prevents one pedal chain from being connected into both paths. It does not combine the device’s instrument and FX paths.
-
-## Footswitch and indicator logic
-
-The two outer momentary footswitches each cycle the loop combination for their position:
-
-| Press since previous state | Selection |
+| State code | Requested loop routing |
 | ---: | --- |
+| 0 | Off; straight through |
 | 1 | Loop A |
 | 2 | Loop B |
-| 3 | Loop A → Loop B |
-| 4 | Off |
-| 5 | Loop A, then repeat |
+| 3 | Loop A, then Loop B in series |
 
-Each position has four state indicators: Off, A, B, and A→B. Only the applied state is lit. The device footswitch on the 2- and 4-lane models advances through available lanes in numerical order. One lane indicator is lit at a time. The single-lane model has no device footswitch; its sole lane remains selected.
+The next press returns to Off. Loop A is always first when both are inserted at one position.
 
-**This section describes Option B (relay-based).** The control PCB implements the cycle with debounced momentary inputs and fixed-function CMOS counters; counter outputs drive transistor relay drivers. Power-up reset selects Off for both loop positions and lane 1 on multi-lane models. Switching is break-before-make where contacts can otherwise momentarily join outputs. A regulated, isolated, center-negative 9 V pedal supply is assumed; verify the supply polarity against the finished wiring before connection. For Option A (mechanical, default), the rotary switch position directly is the state — see the "Circuit Design" section in each variant document.
+There is one physical send/return pair for each pedal loop. A loop cannot be connected to both signal paths at once. To resolve simultaneous requests deterministically, Pre-FX has priority for each loop: the Pre-FX request is applied; Pre-TO applies only loops not already assigned to Pre-FX. In terms of request bits `A1`, `B1` (Pre-FX) and `A2`, `B2` (Pre-TO):
 
-## Shared design and model-specific changes
+```text
+Applied Pre-FX: A1, B1
+Applied Pre-TO: A2 AND NOT A1, B2 AND NOT B1
+```
 
-All variants share the mono signal convention, two external loops, four-state loop selection, relay-switched audio, control power input, loop-state indicators, and basic construction process. Lane count changes the enclosure, TO/FX jack counts, lane-select circuit outputs, lane indicator count, and relay/contact count. Single Lane omits the lane selector and lane indicators.
+The applied LED state may therefore differ from the Pre-TO requested state during a conflict. The control/relay design must implement this allocation before driving both the audio contacts and state LEDs. A loop request at Pre-TO must not connect that loop's send/return if the same loop is applied at Pre-FX.
 
-See the individual model specifications for jack counts, panel layout, control states, estimated bill-of-material totals, and the "Circuit Design" section in each for the full Option A/B wiring detail. See the [electronics reference](electronics-reference.md) for the consolidated, deduplicated part-category specification shared across variants, and the [BOM](bom-PLACEHOLDER.md) for the priced component estimates and alternatives.
+## Hardware control and switching
 
-## Electrical/build limits
+The selected implementation is momentary normally-open footswitches, fixed-function CMOS counters/decoders, transistor relay drivers, and electromechanical signal relays. A practical control block uses a Schmitt-trigger debounce stage (for example, a 74HC14 operated within its rated supply range), one four-state counter per loop position, and a modulo-N counter for lane selection (for example, CD4017-family logic). Counter outputs are one-hot; power-on reset selects Off for both loop positions and lane 1. Use the actual IC datasheets to design reset, clock conditioning, decoupling, and any logic-level translation.
 
-- This is an instrument-level switcher, not a speaker-level or mains-voltage device.
-- Use insulated TS jacks or isolate jack grounds from the enclosure consistently; do not create unintended ground paths through multiple jack sleeves.
-- Keep audio wiring short, shielded where appropriate, and physically separated from relay coils and counter wiring.
-- Use relay contacts rated for low-level audio; do not use the relay coil rating as a proxy for contact suitability.
-- No exact enclosure hole coordinates are specified. Verify the actual enclosure, jacks, switches, relay board and cable bend radii with a full-size layout before drilling.
-- Validate each assembled unit with the continuity and signal-path checks in the [build guide](build-guide.md).
+The relay coil voltage and contact configuration are selected from the actual relay datasheet. Each coil needs a driver rated for its pull-in current and an appropriately oriented flyback clamp. Relay contacts, not CMOS pins, carry audio. Use break-before-make switching for lane changes. The unpowered contact state must pass the instrument path to lane 1, bypass both loop positions, and leave all other lane outputs isolated.
+
+The state-control sequence is not itself an audio schematic. The project currently has no verified, manufacturer-specific relay contact/netlist diagram or PCB drawing. A builder must complete and check a contact-level wiring matrix for the exact relay model before fabricating a control PCB or connecting audio. In particular, verify that the chosen contact groups implement the shared-loop allocation above and the stated power-loss state; do not infer terminal numbers from a generic DPDT drawing. The functional requirements and checkout criteria below are the acceptance specification for that work.
+
+### State and indication
+
+Each loop position has four separate labeled LEDs: Off (white), A (green), B (red), and A→B (amber or bi-color). Exactly one LED per position is on and follows the **applied** routing after allocation. Multi-lane models have one single-color lane LED per lane, with only the selected lane lit. Each LED needs an individual series resistor sized from its supply and forward-voltage datasheet:
+
+`R = (Vrail − Vf) / Iled`
+
+For example, 9 V, a 2 V LED drop, and 5 mA gives 1.4 kΩ; use a suitable standard value such as 1.5 kΩ and verify brightness/current. Do not assume every LED has the same forward voltage.
+
+## Power, grounding, and wiring
+
+- Use a regulated, isolated 9 V DC pedal supply, 2.1 mm center-negative connector, with current capacity above the measured worst-case draw. The current draw depends on the chosen relay coil resistance and the number energized simultaneously; calculate it from the relay datasheet, then measure the completed build. The existing BOM's 100 mA suggestion is not sufficient evidence for a relay design.
+- Add reverse-polarity protection, local supply decoupling at each logic IC, and coil suppression appropriate to the driver circuit. Confirm that the protection device's voltage drop still leaves adequate relay pull-in voltage.
+- Prefer isolated TS jacks. Bond jack sleeves together at a single audio-ground point; bond the enclosure to that point once. Return logic and coil current to the supply-ground star separately from the audio-return wiring, joining them at the defined star point. Do not use the enclosure as the normal audio-current return.
+- Keep high-impedance audio runs short and separate from clocks, LED leads, and coil wiring. Use shielded cable for long/noisy runs and connect its shield at the planned audio-ground end to avoid multiple shield bonds.
+- Secure wires against sharp edges and moving footswitch parts. Insulate unused relay contacts and exposed terminals.
+
+## Fabrication assumptions and release gate
+
+Enclosure sizes in the variant pages are starting points, not guaranteed fits. There are no dimensioned drilling templates, verified PCB files, or tested prototype measurements in this repository. Before fabrication, a builder must confirm panel spacing and lid clearance using the selected parts, then create a pin-numbered schematic/contact matrix from their datasheets. Do not treat the functional block and state tables as a substitute for those manufacturer-specific drawings.
+
+## Verification
+
+Use the unpowered continuity, powered state, lane-isolation, duplicate-loop allocation, LED, and power-loss checks in the [build guide](build-guide.md). Keep an instrument-level test source and amplifier at low volume until all switch states pass.
