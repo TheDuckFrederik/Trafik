@@ -10,7 +10,15 @@ The buffer is active, but the signal at all four audio jacks is AC-coupled and r
 
 ## Circuit diagram
 
-The diagram uses named nets; the pin-by-pin wiring table below is authoritative if a renderer lays out the diagram differently. K1 contacts are functional COM/NC/NO names, not physical relay pin numbers.
+### Visual wiring diagram
+
+![Single-loop prototype visual wiring diagram](single-loop-prototype.svg)
+
+The SVG is editable vector source: open it in a browser for viewing, or edit the SVG directly as text / open it in a vector editor such as Inkscape. It is intended to print on one landscape A3 page. Named nets are shared connections; the pin-by-pin wiring table below remains authoritative. K1 contacts are functional COM/NC/NO names, not physical relay pin numbers.
+
+### Text cross-check
+
+The Mermaid overview is retained as a compact textual cross-check; it does not replace the visual diagram or wiring tables.
 
 ```mermaid
 flowchart LR
@@ -138,7 +146,7 @@ Use isolated TS jacks if possible. If metal jack sleeves bond to the enclosure, 
 | U2 pin 4 (RESET1) | `RESET1` | Active-high reset; R11 100 kΩ from this net to `GND`, C12 100 nF from `+5V` to this net for power-up reset to Q=0. |
 | U2 pin 1 (Q1) | `Q_STATE` | High means loop on. |
 | U2 pin 2 (`/Q1`) | U2 pin 5 and otherwise NC |  |
-| U2 unused flip-flop pins 8 (D2), 9 (CLK2), 10 (RESET2), 11 (SET2) | `GND` | All unused CMOS inputs tied low; pins 12/13 outputs unconnected. |
+| U2 unused flip-flop pins 8 (SET2), 9 (D2), 10 (CLK2), 11 (RESET2) | `GND` | All unused CMOS inputs tied low; pins 12/13 outputs unconnected. |
 | R12 4.7 kΩ | `Q_STATE` to Q1 base | Base-current limiter. |
 | R13 100 kΩ | Q1 base to `GND` | Holds driver off during reset/power-up. |
 | Q1 2N3904 emitter | `GND` | Verify the exact manufacturer's transistor lead order; use E/B/C functional terminals. |

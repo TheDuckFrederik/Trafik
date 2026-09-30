@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 1680 1188" role="img" aria-labelledby="title description">
+  <title id="title">Single-loop Trafik prototype wiring diagram</title>
+  <desc id="description">Landscape wiring diagram for the documented one-loop guitar pedal prototype, showing power, TL072 buffer and bias, DPDT relay audio routing, CD4013 and 74HC14 control logic, relay driver, LED, named nets, and grounding.</desc>
+  <defs>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #17212b; }
+      .title { font-size: 30px; font-weight: 700; }
+      .subtitle { font-size: 15px; fill: #43515e; }
+      .section { font-size: 18px; font-weight: 700; }
+      .head { font-size: 15px; font-weight: 700; }
+      .body { font-size: 13px; }
+      .small { font-size: 11px; }
+      .tiny { font-size: 10px; }
+      .mono { font-family: "Courier New", monospace; font-size: 12px; font-weight: 700; }
+      .panel { fill: #fff; stroke: #aab7c4; stroke-width: 1.5; }
+      .block { fill: #f4f7fa; stroke: #536579; stroke-width: 1.5; }
+      .chip { fill: #fff; stroke: #17212b; stroke-width: 2; }
+      .audio { fill: none; stroke: #0878b5; stroke-width: 3; }
+      .power { fill: none; stroke: #c33b32; stroke-width: 3; }
+      .logic { fill: none; stroke: #6a45a0; stroke-width: 3; }
+      .coil { fill: none; stroke: #c06a14; stroke-width: 3; stroke-dasharray: 8 5; }
+      .ground { fill: none; stroke: #28734a; stroke-width: 2.5; }
+      .wire { fill: none; stroke: #536579; stroke-width: 2; }
+      .dot { fill: #17212b; }
+      .netblue { fill: #e4f4fc; stroke: #0878b5; stroke-width: 1.3; }
+      .netred { fill: #fff0ed; stroke: #c33b32; stroke-width: 1.3; }
+      .netpurple { fill: #f2edfa; stroke: #6a45a0; stroke-width: 1.3; }
+      .netgreen { fill: #eaf5ee; stroke: #28734a; stroke-width: 1.3; }
+      .amber { fill: #fff5df; stroke: #bd7910; stroke-width: 1.5; }
+      .muted { fill: #f0f3f6; stroke: #9aa7b3; stroke-width: 1.2; }
+    </style>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#0878b5"/></marker>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#6a45a0"/></marker>
+  </defs>
+  <rect width="1680" height="1188" fill="#f6f8fa"/>
+  <text x="32" y="43" class="title">Single-loop Trafik prototype — visual wiring diagram</text>
+  <text x="34" y="68" class="subtitle">Functional connections and named nets; cross-check against docs/single-loop-prototype.md wiring tables before building.</text>
+  <rect x="32" y="82" width="1616" height="34" rx="5" class="amber"/>
+  <text x="46" y="104" class="head">VERIFY EXACT PART DATASHEETS: relay, regulator, transistor, jack and connector physical pin numbering/orientation is package-specific. No relay pin numbers are shown here.</text>
+
+  <!-- POWER / BIAS -->
+  <rect x="32" y="132" width="770" height="245" rx="8" class="panel"/>
+  <text x="50" y="160" class="section">1 · DC power, protection, 5 V rail &amp; virtual bias</text>
+  <rect x="52" y="184" width="176" height="89" rx="6" class="block"/>
+  <text x="66" y="205" class="head">DC INPUT · center-negative</text>
+  <text x="66" y="227" class="body">Outer sleeve = PSU + / +9 V</text>
+  <text x="66" y="248" class="body">Barrel center = PSU − / GND</text>
+  <text x="66" y="265" class="small">Do not reverse these connections.</text>
+  <path d="M140 273 V338" class="ground"/>
+  <path d="M228 216 H264" class="power"/>
+  <rect x="264" y="196" width="116" height="42" rx="5" class="block"/>
+  <text x="276" y="214" class="head">D3 · 1N5817</text>
+  <text x="276" y="230" class="small">series protection →</text>
+  <text x="272" y="257" class="small">anode: PSU_9V_RAW</text>
+  <text x="272" y="272" class="small">cathode: +9V_PROT</text>
+  <path d="M380 216 H412" class="power"/>
+  <rect x="412" y="196" width="104" height="42" rx="5" class="netred"/>
+  <text x="424" y="222" class="mono">+9V_PROT</text>
+  <path d="M516 216 H540 V187 H586" class="power"/>
+  <rect x="586" y="176" width="146" height="68" rx="5" class="chip"/>
+  <text x="599" y="196" class="head">U3 · LM7805</text>
+  <text x="599" y="216" class="body">pin 1 IN ← +9V_PROT</text>
+  <text x="599" y="234" class="body">pin 2 GND · pin 3 OUT</text>
+  <path d="M732 210 H774" class="power"/>
+  <rect x="716" y="254" width="70" height="30" rx="5" class="netred"/>
+  <text x="726" y="274" class="mono">+5V</text>
+  <path d="M750 210 V254" class="power"/>
+  <text x="54" y="302" class="small">C5 10 µF (+ to +9V_PROT) + C5b 100 nF: +9V_PROT to GND</text>
+  <text x="54" y="320" class="small">C6 330 nF: U3 IN to GND · C7 100 nF + C8 10 µF (+): +5V to GND</text>
+  <path d="M518 216 V286 H534" class="power"/>
+  <rect x="534" y="266" width="208" height="53" rx="5" class="block"/>
+  <text x="546" y="286" class="head">VB bias divider</text>
+  <text x="546" y="304" class="small">+9V_PROT — R3 1 MΩ — VB — R4 1 MΩ — GND</text>
+  <text x="546" y="316" class="tiny">VB ≈ 4.5 V · C2 10 µF (+ to VB) + C3 100 nF to GND</text>
+  <path d="M52 338 H782" class="ground"/>
+  <circle cx="52" cy="338" r="4" class="dot"/>
+  <text x="64" y="359" class="small">PSU negative → GND star. All supply/logic/audio grounds return to GND; VB is signal bias, never ground.</text>
+
+  <!-- AUDIO BUFFER -->
+  <rect x="32" y="393" width="770" height="388" rx="8" class="panel"/>
+  <text x="50" y="421" class="section">2 · Audio input buffer · DIP-8 pin numbers shown</text>
+  <rect x="52" y="450" width="120" height="63" rx="5" class="block"/>
+  <text x="65" y="474" class="head">J1 INPUT</text><text x="65" y="495" class="body">tip · sleeve AGND</text>
+  <path d="M172 480 H205" class="audio"/>
+  <rect x="205" y="462" width="89" height="38" rx="4" class="block"/>
+  <text x="218" y="478" class="head">C1 100 nF</text><text x="219" y="493" class="tiny">series coupling</text>
+  <path d="M294 480 H325" class="audio"/>
+  <rect x="325" y="462" width="104" height="38" rx="5" class="netblue"/>
+  <text x="337" y="486" class="mono">BUF_IN</text>
+  <path d="M429 480 H463" class="audio" marker-end="url(#arrowBlue)"/>
+  <rect x="463" y="440" width="236" height="161" rx="7" class="chip"/>
+  <text x="521" y="462" class="head">U1 · TL072CP · DIP-8</text>
+  <text x="478" y="488" class="body">3 (+IN A) ← BUF_IN · R2 1 MΩ → VB</text>
+  <text x="478" y="511" class="body">2 (−IN A) ──────────────┐</text>
+  <text x="478" y="532" class="body">1 (OUT A) ──────────────┘ voltage follower</text>
+  <text x="478" y="555" class="body">8 V+ → +9V_PROT · 4 V− → GND</text>
+  <text x="478" y="578" class="small">C4 100 nF directly across pins 8 and 4</text>
+  <path d="M699 520 H724" class="audio"/>
+  <rect x="724" y="502" width="55" height="35" rx="4" class="block"/>
+  <text x="731" y="524" class="small">R5 100Ω</text>
+  <path d="M779 520 H790" class="audio"/>
+  <text x="710" y="554" class="tiny">then C13 1 µF series</text>
+  <rect x="687" y="578" width="98" height="34" rx="5" class="netblue"/>
+  <text x="698" y="600" class="mono">BUF_AC</text>
+  <text x="52" y="533" class="small">R1 1 MΩ: IN_TIP → GND</text>
+  <text x="52" y="552" class="small">R2 1 MΩ: BUF_IN → VB</text>
+  <text x="52" y="575" class="small">J1 sleeve → AGND</text>
+  <path d="M109 513 V527" class="wire"/><path d="M109 527 V535" class="ground"/>
+  <rect x="52" y="624" width="727" height="132" rx="6" class="muted"/>
+  <text x="68" y="649" class="head">Unused TL072 channel · define it; do not leave inputs floating</text>
+  <text x="68" y="676" class="body">Pin 5 (+IN B) → VB · pin 6 (−IN B) tied to pin 7 (OUT B) · biased unity follower.</text>
+  <text x="68" y="704" class="body">U1 pin map: 1 OUT A · 2 −IN A · 3 +IN A · 4 V− · 5 +IN B · 6 −IN B · 7 OUT B · 8 V+</text>
+  <text x="68" y="733" class="small">BUF_AC is AC-coupled and ground-referenced. R6 1 MΩ: BUF_AC → GND.</text>
+  <path d="M463 601 V611" class="power"/>
+  <text x="471" y="619" class="tiny">VB to pin 5</text>
+
+  <!-- CONTROL -->
+  <rect x="32" y="797" width="770" height="263" rx="8" class="panel"/>
+  <text x="50" y="825" class="section">3 · Momentary switch, debounce, toggle logic, LED &amp; driver</text>
+  <rect x="50" y="852" width="138" height="77" rx="5" class="block"/>
+  <text x="63" y="873" class="head">SW1 momentary NO</text>
+  <text x="63" y="894" class="body">press: CLK_SW → GND</text>
+  <text x="63" y="914" class="small">R10 100 kΩ pull-up to +5V</text>
+  <path d="M188 882 H213" class="logic"/>
+  <rect x="213" y="851" width="112" height="79" rx="5" class="block"/>
+  <text x="226" y="873" class="head">CLK_SW RC</text>
+  <text x="226" y="895" class="body">C11 100 nF</text><text x="226" y="914" class="small">to GND</text>
+  <path d="M325 882 H345" class="logic" marker-end="url(#arrowPurple)"/>
+  <rect x="345" y="851" width="133" height="79" rx="5" class="chip"/>
+  <text x="360" y="874" class="head">U4 SN74HC14N</text>
+  <text x="360" y="897" class="body">pin 1 input</text><text x="360" y="916" class="body">pin 2 output</text>
+  <path d="M478 882 H499" class="logic" marker-end="url(#arrowPurple)"/>
+  <rect x="499" y="842" width="174" height="100" rx="5" class="chip"/>
+  <text x="513" y="863" class="head">U2 CD4013BE</text>
+  <text x="513" y="884" class="body">14 VDD +5V · 7 VSS GND</text>
+  <text x="513" y="904" class="body">3 CLK1 ← U4 pin 2</text>
+  <text x="513" y="924" class="body">5 D1 ← 2 /Q1 · 1 Q1 = Q_STATE</text>
+  <path d="M673 882 H698" class="logic"/>
+  <rect x="698" y="851" width="85" height="79" rx="5" class="block"/>
+  <text x="710" y="874" class="head">R12</text><text x="710" y="896" class="body">4.7 kΩ</text><text x="710" y="916" class="small">to Q1 base</text>
+  <text x="50" y="963" class="small">U2 pin 6 SET1 → GND · pin 4 RESET1 ← C12 100 nF from +5V; R11 100 kΩ RESET1 → GND (startup reset, Q=0).</text>
+  <text x="50" y="984" class="small">Unused U2 inputs 8, 9, 10, 11 → GND; outputs 12, 13 NC. U4 unused inputs 3, 5, 9, 11 → GND; outputs NC.</text>
+  <text x="50" y="1005" class="small">C9 100 nF across U2 pins 14/7 · C10 100 nF across U4 pins 14/7 · Q_STATE high = loop on.</text>
+  <rect x="50" y="1020" width="350" height="27" rx="4" class="netpurple"/>
+  <text x="62" y="1039" class="small"><tspan font-weight="700">LED:</tspan> Q_STATE → R14 2.2 kΩ → D2 anode; cathode → GND</text>
+  <rect x="412" y="1020" width="371" height="27" rx="4" class="block"/>
+  <text x="424" y="1039" class="small"><tspan font-weight="700">Q1:</tspan> 2N3904 NPN low-side switch · emitter GND · R13 100 kΩ base→GND</text>
+
+  <!-- RELAY AUDIO ROUTING -->
+  <rect x="824" y="132" width="824" height="491" rx="8" class="panel"/>
+  <text x="842" y="160" class="section">4 · K1 non-latching DPDT 5 V relay — audio contact functions</text>
+  <text x="842" y="183" class="body">Panasonic TQ2-5V · de-energized = BYPASS · energized = LOOP ON</text>
+  <text x="842" y="202" class="small">Contact function only; identify real terminals from the exact relay datasheet and package view.</text>
+  <rect x="852" y="224" width="367" height="239" rx="7" class="block"/>
+  <text x="870" y="248" class="head">POLE A · input routing</text>
+  <circle cx="913" cy="331" r="5" class="dot"/>
+  <path d="M913 331 H983" class="audio"/>
+  <circle cx="990" cy="281" r="5" fill="#0878b5"/><circle cx="990" cy="331" r="5" fill="#0878b5"/>
+  <path d="M913 331 H878" class="audio"/><text x="872" y="318" class="small" text-anchor="end">COM_A</text>
+  <path d="M990 281 H1031" class="audio"/><text x="1038" y="285" class="body">NO_A → SEND_TIP</text>
+  <path d="M990 331 H1031" class="audio"/><text x="1038" y="335" class="body">NC_A → BYPASS_LINK</text>
+  <path d="M990 331 H1031" class="audio"/>
+  <text x="870" y="429" class="body">COM_A ← BUF_AC (from U1 pin 1 via R5 + C13)</text>
+  <text x="870" y="449" class="small">Resting blade shown touching NC in bypass state.</text>
+  <rect x="1240" y="224" width="385" height="239" rx="7" class="block"/>
+  <text x="1258" y="248" class="head">POLE B · output routing</text>
+  <circle cx="1300" cy="331" r="5" class="dot"/>
+  <path d="M1300 331 H1370" class="audio"/>
+  <circle cx="1377" cy="281" r="5" fill="#0878b5"/><circle cx="1377" cy="331" r="5" fill="#0878b5"/>
+  <path d="M1300 331 H1265" class="audio"/><text x="1260" y="318" class="small" text-anchor="end">COM_B</text>
+  <path d="M1377 281 H1418" class="audio"/><text x="1424" y="285" class="body">NO_B → RETURN_TIP</text>
+  <path d="M1377 331 H1418" class="audio"/><text x="1424" y="335" class="body">NC_B → BYPASS_LINK</text>
+  <path d="M1377 331 H1418" class="audio"/>
+  <text x="1258" y="429" class="body">COM_B → OUT_TIP (J2 output)</text>
+  <text x="1258" y="449" class="small">Resting blade shown touching NC in bypass state.</text>
+  <path d="M1075 485 H1388" class="audio"/>
+  <path d="M1075 485 V477 M1388 485 V477" class="audio"/>
+  <rect x="1130" y="470" width="207" height="31" rx="4" class="netblue"/>
+  <text x="1145" y="491" class="mono">BYPASS_LINK</text>
+  <text x="842" y="527" class="body">BYPASS (NC): BUF_AC → pole A COM/NC → BYPASS_LINK → pole B NC/COM → OUT_TIP.</text>
+  <text x="842" y="550" class="body">LOOP ON (NO): BUF_AC → SEND_TIP; RETURN_TIP → OUT_TIP.</text>
+  <text x="842" y="574" class="small">J3 SEND tip and J4 RETURN tip are ground-referenced via pulldowns; R7 / R8 / R9 = 1 MΩ to GND.</text>
+  <rect x="842" y="588" width="782" height="22" rx="4" class="amber"/>
+  <text x="852" y="604" class="small" font-weight="700">Do not invent relay pin numbers or substitute a latching relay; physical contacts/coil must match datasheet.</text>
+
+  <!-- RELAY COIL / GROUNDING -->
+  <rect x="824" y="640" width="824" height="192" rx="8" class="panel"/>
+  <text x="842" y="668" class="section">5 · Relay coil, flyback protection &amp; common ground</text>
+  <rect x="850" y="691" width="211" height="74" rx="5" class="block"/>
+  <text x="865" y="713" class="head">K1 · 5 V non-latching coil</text>
+  <text x="865" y="736" class="body">COIL+ → +5V</text>
+  <text x="865" y="755" class="body">COIL− → Q1 collector</text>
+  <path d="M1061 726 H1090" class="coil"/>
+  <rect x="1090" y="697" width="166" height="58" rx="5" class="block"/>
+  <text x="1104" y="720" class="head">D1 · 1N4148</text>
+  <text x="1104" y="742" class="body">K to COIL+ · A to COIL−</text>
+  <path d="M1256 726 H1280" class="coil"/>
+  <rect x="1280" y="691" width="342" height="74" rx="5" class="block"/>
+  <text x="1294" y="713" class="head">Q1 · 2N3904 functional terminals</text>
+  <text x="1294" y="736" class="body">base ← R12 4.7 kΩ from Q_STATE</text>
+  <text x="1294" y="755" class="body">emitter → GND · collector → COIL−</text>
+  <text x="850" y="796" class="small">Relay coil is continuously energized when loop-on; check coil rating/current and regulator heat.</text>
+  <text x="850" y="816" class="small">Verify actual transistor lead order, relay coil terminals and diode orientation against selected-part datasheets.</text>
+
+  <rect x="824" y="849" width="824" height="211" rx="8" class="panel"/>
+  <text x="842" y="877" class="section">6 · Jack sleeves, grounding topology &amp; signal states</text>
+  <rect x="850" y="895" width="748" height="47" rx="5" class="netgreen"/>
+  <text x="866" y="915" class="head">GND STAR = PSU negative · one shared 0 V reference</text>
+  <text x="866" y="933" class="small">PSU center (−), logic, regulator, relay coil return and audio-ground connection meet here.</text>
+  <path d="M896 966 H1555" class="ground"/>
+  <path d="M928 966 V976 M1064 966 V976 M1200 966 V976 M1336 966 V976 M1501 966 V976" class="ground"/>
+  <rect x="864" y="976" width="128" height="32" rx="4" class="block"/><text x="875" y="997" class="small">J1 sleeve AGND</text>
+  <rect x="1000" y="976" width="128" height="32" rx="4" class="block"/><text x="1011" y="997" class="small">J2 sleeve AGND</text>
+  <rect x="1136" y="976" width="128" height="32" rx="4" class="block"/><text x="1147" y="997" class="small">J3 sleeve AGND</text>
+  <rect x="1272" y="976" width="128" height="32" rx="4" class="block"/><text x="1283" y="997" class="small">J4 sleeve AGND</text>
+  <rect x="1410" y="976" width="183" height="32" rx="4" class="netgreen"/><text x="1420" y="997" class="small">AGND ↔ GND at star only</text>
+  <text x="850" y="1035" class="small">Audio tips: IN_TIP → BUF_IN → BUF_AC → K1 → SEND_TIP / RETURN_TIP / OUT_TIP · all jack sleeves → AGND.</text>
+  <text x="850" y="1052" class="small">Keep high-impedance input wiring away from logic/LED/coil wiring; keep VB separate from every sleeve and ground return.</text>
+
+  <!-- LEGEND AND CAUTION -->
+  <rect x="32" y="1077" width="1616" height="83" rx="8" class="panel"/>
+  <text x="50" y="1103" class="section">Legend &amp; build notes</text>
+  <path d="M256 1098 H300" class="audio"/><text x="309" y="1103" class="body">Audio (blue)</text>
+  <path d="M420 1098 H464" class="power"/><text x="473" y="1103" class="body">Power rails (red)</text>
+  <path d="M609 1098 H653" class="logic"/><text x="662" y="1103" class="body">Logic (purple)</text>
+  <path d="M790 1098 H834" class="coil"/><text x="843" y="1103" class="body">Relay coil (orange dashed)</text>
+  <path d="M1044 1098 H1088" class="ground"/><text x="1097" y="1103" class="body">Ground (green)</text>
+  <text x="50" y="1131" class="body">Matching net names denote the same electrical connection; no physical relay pin numbers are implied. Follow the wiring tables for full component values and test sequence.</text>
+  <text x="50" y="1151" class="small">Prototype reference only; validate polarity, current, temperature, selected parts, and audio behavior before connecting valuable equipment.</text>
+</svg>
