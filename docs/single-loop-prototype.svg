@@ -61,10 +61,9 @@
   <text x="599" y="196" class="head">U3 · LM7805</text>
   <text x="599" y="216" class="body">pin 1 IN ← +9V_PROT</text>
   <text x="599" y="234" class="body">pin 2 GND · pin 3 OUT</text>
-  <path d="M732 210 H774" class="power"/>
-  <rect x="716" y="254" width="70" height="30" rx="5" class="netred"/>
-  <text x="726" y="274" class="mono">+5V</text>
-  <path d="M750 210 V254" class="power"/>
+  <path d="M732 210 H742" class="power"/>
+  <rect x="742" y="192" width="58" height="36" rx="5" class="netred"/>
+  <text x="752" y="215" class="mono">+5V</text>
   <text x="54" y="302" class="small">C5 10 µF (+ to +9V_PROT) + C5b 100 nF: +9V_PROT to GND</text>
   <text x="54" y="320" class="small">C6 330 nF: U3 IN to GND · C7 100 nF + C8 10 µF (+): +5V to GND</text>
   <path d="M518 216 V286 H534" class="power"/>
@@ -90,18 +89,19 @@
   <path d="M429 480 H463" class="audio" marker-end="url(#arrowBlue)"/>
   <rect x="463" y="440" width="236" height="161" rx="7" class="chip"/>
   <text x="521" y="462" class="head">U1 · TL072CP · DIP-8</text>
-  <text x="478" y="488" class="body">3 (+IN A) ← BUF_IN · R2 1 MΩ → VB</text>
-  <text x="478" y="511" class="body">2 (−IN A) ──────────────┐</text>
-  <text x="478" y="532" class="body">1 (OUT A) ──────────────┘ voltage follower</text>
-  <text x="478" y="555" class="body">8 V+ → +9V_PROT · 4 V− → GND</text>
-  <text x="478" y="578" class="small">C4 100 nF directly across pins 8 and 4</text>
-  <path d="M699 520 H724" class="audio"/>
-  <rect x="724" y="502" width="55" height="35" rx="4" class="block"/>
-  <text x="731" y="524" class="small">R5 100Ω</text>
-  <path d="M779 520 H790" class="audio"/>
-  <text x="710" y="554" class="tiny">then C13 1 µF series</text>
-  <rect x="687" y="578" width="98" height="34" rx="5" class="netblue"/>
-  <text x="698" y="600" class="mono">BUF_AC</text>
+  <text x="478" y="482" class="body">3 (+IN A) ← BUF_IN · R2 1 MΩ → VB</text>
+  <text x="478" y="502" class="body">2 (−IN A) ──────────────┐</text>
+  <text x="478" y="522" class="body">1 (OUT A) ──────────────┘</text>
+  <text x="478" y="542" class="body">8 V+ → +9V_PROT · 4 V− → GND</text>
+  <text x="478" y="562" class="small">C4 100 nF directly across pins 8 and 4</text>
+  <text x="478" y="582" class="tiny">Pins 1–2: unity-gain follower</text>
+  <path d="M699 510 H724" class="audio"/>
+  <rect x="724" y="492" width="55" height="35" rx="4" class="block"/>
+  <text x="731" y="514" class="small">R5 100Ω</text>
+  <path d="M779 510 H790" class="audio"/>
+  <text x="710" y="544" class="tiny">then C13 1 µF series</text>
+  <rect x="687" y="568" width="98" height="34" rx="5" class="netblue"/>
+  <text x="698" y="590" class="mono">BUF_AC</text>
   <text x="52" y="533" class="small">R1 1 MΩ: IN_TIP → GND</text>
   <text x="52" y="552" class="small">R2 1 MΩ: BUF_IN → VB</text>
   <text x="52" y="575" class="small">J1 sleeve → AGND</text>
@@ -130,12 +130,12 @@
   <text x="360" y="874" class="head">U4 SN74HC14N</text>
   <text x="360" y="897" class="body">pin 1 input</text><text x="360" y="916" class="body">pin 2 output</text>
   <path d="M478 882 H499" class="logic" marker-end="url(#arrowPurple)"/>
-  <rect x="499" y="842" width="174" height="100" rx="5" class="chip"/>
+  <rect x="499" y="842" width="192" height="100" rx="5" class="chip"/>
   <text x="513" y="863" class="head">U2 CD4013BE</text>
   <text x="513" y="884" class="body">14 VDD +5V · 7 VSS GND</text>
   <text x="513" y="904" class="body">3 CLK1 ← U4 pin 2</text>
-  <text x="513" y="924" class="body">5 D1 ← 2 /Q1 · 1 Q1 = Q_STATE</text>
-  <path d="M673 882 H698" class="logic"/>
+  <text x="513" y="924" class="small">5 D1←2/Q1 · 1 Q1=Q_STATE</text>
+  <path d="M691 882 H698" class="logic"/>
   <rect x="698" y="851" width="85" height="79" rx="5" class="block"/>
   <text x="710" y="874" class="head">R12</text><text x="710" y="896" class="body">4.7 kΩ</text><text x="710" y="916" class="small">to Q1 base</text>
   <text x="50" y="963" class="small">U2 pin 6 SET1 → GND · pin 4 RESET1 ← C12 100 nF from +5V; R11 100 kΩ RESET1 → GND (startup reset, Q=0).</text>
