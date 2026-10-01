@@ -92,7 +92,7 @@
   <text x="478" y="482" class="body">3 (+IN A) ← BUF_IN · R2 1 MΩ → VB</text>
   <text x="478" y="502" class="body">2 (−IN A) ──────────────┐</text>
   <text x="478" y="522" class="body">1 (OUT A) ──────────────┘</text>
-  <text x="478" y="542" class="tiny">Pins 1–2: unity-gain follower</text>
+  <text x="478" y="542" class="tiny">Pins 1–2 (OUT A/−IN A): unity-gain follower</text>
   <text x="478" y="562" class="small">8 V+ → +9V_PROT · 4 V− → GND</text>
   <text x="478" y="581" class="small">C4 100 nF directly across pins 8 and 4</text>
   <path d="M699 510 H724" class="audio"/>
