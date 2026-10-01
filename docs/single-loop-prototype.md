@@ -14,7 +14,7 @@ The buffer is active, but the signal at all four audio jacks is AC-coupled and r
 
 ![Single-loop prototype visual wiring diagram](single-loop-prototype.svg)
 
-The SVG is editable vector source: open it in a browser for viewing, or edit the SVG directly as text / open it in a vector editor such as Inkscape. It is intended to print on one landscape A3 page. Named nets are shared connections; the pin-by-pin wiring table below remains authoritative. K1 contacts are functional COM/NC/NO names, not physical relay pin numbers.
+The SVG is editable vector source: open it in a browser for viewing, or edit the SVG directly as text / open it in a vector editor such as Inkscape. It is intended to print on one landscape A3 page. Named nets are shared connections; the pin-by-pin wiring table below remains authoritative. K1 contacts are functional COM/NC/NO names, not physical relay pin numbers. A plain-text [ASCII wiring diagram](#ascii-wiring-diagram-quick-text-only-reference) using the same net names is included below for a quick, renderer-free reference.
 
 ### Text cross-check
 
@@ -51,6 +51,108 @@ flowchart LR
         P5 --> COIL
         COIL -. "D1 flyback across coil" .- P5
     end
+```
+
+### ASCII wiring diagram (quick text-only reference)
+
+For a quick reference without opening an image or Markdown renderer, the same functional wiring is reproduced below as plain text. Net names match the SVG, the Mermaid cross-check, and the wiring tables in this document exactly. Functional contact names (`COM`/`NC`/`NO`) are used for K1; no physical pin numbers are implied.
+
+```text
+LEGEND: --- audio   === power   ... logic/control   [part]   (net name)   AGND/GND join at one star point only
+
+================================ POWER, PROTECTION, +5V RAIL ================================
+
+  DC JACK (2.1 mm, center-negative)
+    outer sleeve ====================> (PSU_9V_RAW)
+    center pin   --------------------> (GND)  [this is the PSU negative / 0 V reference]
+
+  (PSU_9V_RAW) === [D3 1N5817 anode->cathode] === (+9V_PROT) ===+=== [C5 10uF + + C5b 100nF] -> GND
+                                                                 |
+                                                                 +=== [U3 LM7805: pin1 IN<-+9V_PROT, pin2 GND, pin3 OUT] === (+5V)
+                                                                           [C6 330nF: U3 IN -> GND]        [C7 100nF + C8 10uF +: +5V -> GND]
+
+  VIRTUAL BIAS (VB is signal bias, NEVER ground):
+  (+9V_PROT) === [R3 1M] ===+=== (VB ~4.5V) ===+=== [R4 1M] === GND
+                             |                 |
+                             +=== [C2 10uF +]  +=== [C3 100nF]  (both VB -> GND)
+
+================================ AUDIO INPUT BUFFER (U1 TL072CP, DIP-8) ================================
+
+  J1 IN tip --[C1 100nF]--> (BUF_IN) --+--> U1 pin3 (+IN A)
+                                        +--[R1 1M]--> GND
+  (VB) --[R2 1M]--> (BUF_IN)                           (bias feed, not a short to VB)
+
+  U1 pin2 (-IN A) <----------------------+
+  U1 pin1 (OUT A) ------------------------+   [unity-gain voltage follower]
+  U1 pin1 (OUT A) --[R5 100R]--> [C13 1uF series] --> (BUF_AC) --[R6 1M]--> GND
+
+  U1 pin8 (V+) <- +9V_PROT   U1 pin4 (V-) <- GND   [C4 100nF across pins 8/4, at the IC]
+
+  Unused channel B (do not leave floating):
+    U1 pin5 (+IN B) <- VB
+    U1 pin6 (-IN B) <----+
+    U1 pin7 (OUT B) ------+   [biased unity follower, holds channel B at VB]
+
+================================ K1 DPDT RELAY — AUDIO ROUTING (non-latching, 5V coil) ================================
+
+  De-energized (bypass) state shown. Function names only -- verify real terminals on the datasheet.
+
+                         +------------------ (BYPASS_LINK) ------------------+
+                         |                                                   |
+  (BUF_AC) ---> COM_A  NC_A                                           NC_B  COM_B ---> (OUT_TIP) --> J2 OUTPUT tip
+                         |                                                   |
+                       NO_A ------------------------------> (SEND_TIP)     NO_B <------------------ (RETURN_TIP)
+                         |                                                   |
+                   J3 SEND tip                                       J4 RETURN tip
+
+  BYPASS  (relay OFF): BUF_AC -> COM_A/NC_A -> BYPASS_LINK -> NC_B/COM_B -> OUT_TIP
+  LOOP ON (relay ON) : BUF_AC -> COM_A/NO_A -> SEND_TIP   ;   RETURN_TIP -> NO_B/COM_B -> OUT_TIP
+
+  Pulldowns: (SEND_TIP)--[R7 1M]-->GND   (RETURN_TIP)--[R8 1M]-->GND   (OUT_TIP)--[R9 1M]-->GND
+  All jack sleeves (J1-J4) ----------------------------------------------------------> AGND
+
+================================ CONTROL: SWITCH, DEBOUNCE, TOGGLE, LED, DRIVER ================================
+
+  (+5V) ... [R10 100k pull-up] ...+... (CLK_SW) ... [U4 SN74HC14 pin1 IN -> pin2 OUT] ... U2 pin3 (CLK1)
+                                  |
+                                  +... [SW1 momentary NO] ...> GND     (press pulls CLK_SW low)
+                                  +... [C11 100nF] ..........> GND     (RC debounce with Schmitt input)
+
+  U2 CD4013BE toggle flip-flop:
+    pin14 VDD <- +5V      pin7 VSS -> GND      [C9 100nF across pins 14/7]
+    pin3  CLK1 <- U4 pin2 (clean debounced edge)
+    pin5  D1  <- pin2 (/Q1)         [toggle configuration]
+    pin6  SET1 -> GND               [asynchronous set held inactive]
+    pin4  RESET1 <--+-- [C12 100nF] <- +5V         [startup reset network]
+                     +-- [R11 100k] --> GND         (forces Q=0 at power-up)
+    pin1  Q1 -> (Q_STATE)           [HIGH = loop on]
+    unused pins 8 (SET2), 9 (D2), 10 (CLK2), 11 (RESET2) -> GND; outputs 12/13 not connected
+
+  U4 SN74HC14N: pin14 VCC <- +5V   pin7 GND -> GND   [C10 100nF across pins 14/7]
+    unused inputs 3, 5, 9, 11 -> GND; their outputs left not connected
+
+  LED:    (Q_STATE) --[R14 2.2k]--> D2 anode ... D2 cathode --> GND   [lit = loop on]
+
+  RELAY DRIVER (non-latching; coil energized for the whole loop-on state):
+    (Q_STATE) --[R12 4.7k]--> Q1 base --[R13 100k]--> GND   (holds driver off during reset/power-up)
+    Q1 (2N3904) emitter --> GND
+    Q1 collector --> K1 COIL-
+    (+5V) --------------------> K1 COIL+
+    D1 1N4148 flyback diode directly across the coil: cathode -> COIL+ , anode -> COIL-
+
+================================ GROUNDING ================================
+
+  GND  = one 0 V reference for DC supply return, logic, relay-coil return.
+  AGND = audio-jack-sleeve ground; joins GND at exactly one star point (the PSU- reference).
+  VB   = signal bias only; never connect VB to AGND, GND, a jack sleeve, or a relay contact.
+
+  J1 sleeve --+
+  J2 sleeve --+
+  J3 sleeve --+--> AGND --> [single star join] <-- GND <-- PSU center (-), U3 return, U2/U4 return, K1 coil return
+  J4 sleeve --+
+
+NOTE: verify exact physical pin numbering for K1, U3, Q1, the DC jack, and every connector against the
+selected part's datasheet before wiring; this diagram names functional nets and contacts only.
 ```
 
 ### Relay contact function

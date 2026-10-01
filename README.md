@@ -14,7 +14,7 @@ Trafik is a family of passive-audio, relay-switched pedal-loop routers for selec
 
 - [Architecture and common electrical definitions](docs/architecture.md)
 - [Single Lane Trafik](docs/single-lane-PLACEHOLDER.md)
-- [Single-loop buffer/relay prototype circuit and wiring diagram](docs/single-loop-prototype.md) (separate bench prototype; not the full Single Lane product circuit)
+- [Single-loop buffer/relay prototype circuit and wiring diagram](docs/single-loop-prototype.md) (separate bench prototype; not the full Single Lane product circuit; includes a plain-text ASCII wiring diagram)
 - [Single-loop prototype visual wiring diagram (SVG)](docs/single-loop-prototype.svg)
 - [2 Lane Trafik](docs/two-lane-PLACEHOLDER.md)
 - [4 Lane Trafik](docs/four-lane-PLACEHOLDER.md)
