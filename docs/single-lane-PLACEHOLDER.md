@@ -4,6 +4,8 @@
 
 Single Lane Trafik has the two independently controlled pedal-loop positions and one fixed device path. It omits only the device/lane selector and lane indicators.
 
+> **Circuit design:** [single-lane-circuit.md](single-lane-circuit.md) is the contact-level circuit design for this model (4 DPDT relays, 7 CMOS ICs, passive audio, 9 V rail) with the full state/relay/LED truth table. It is captured as the KiCad 10 schematic `SingleLane/SingleLane.kicad_sch` (netlist-verified against the design tables; ERC clean). It is a functional design, not a built and measured unit.
+>
 > **Separate bench prototype:** [single-loop-prototype.md](single-loop-prototype.md) documents an earlier, simpler one-loop buffer/relay circuit. It is not the complete Single Lane Trafik routing design described on this page.
 
 ## Connections and physical layout
@@ -36,11 +38,11 @@ The physical Loop A and Loop B send/return pairs are shared between the position
 
 Use the shared fixed-function CMOS/relay implementation described in [architecture.md](architecture.md#hardware-control-and-switching). This model requires two debounced loop-state counter channels, their relay drivers/contact groups, eight state LEDs with individual resistors, and the common 9 V input/protection/decoupling parts. There is no lane counter, lane switch, or lane LED.
 
-The contact count and relay part number cannot be safely finalized from a generic DPDT description: the shared-loop assignment matrix, bypass state, and exact manufacturer pinout must be verified before board layout. Refer to [electronics-reference.md](electronics-reference.md) for part-selection criteria and [build-guide.md](build-guide.md) for the pre-fabrication gate and test procedure.
+The contact-level design in [single-lane-circuit.md](single-lane-circuit.md) finalizes the relay count at **4 DPDT relays** (TQ2-9V class) and a 7-IC CMOS control board implementing the shared-loop allocation with Pre-FX priority. Manufacturer-specific pinouts still must be verified against the exact datasheets before board layout; see [electronics-reference.md](electronics-reference.md) for part-selection criteria and [build-guide.md](build-guide.md) for the pre-fabrication gate and test procedure.
 
 ## Estimated materials
 
-The [BOM](bom-PLACEHOLDER.md) gives the current illustrative category-level estimate and retailer examples. Its relay and control-board quantities are preliminary allowances, not a validated netlist-based count. The estimate is $142.40 before tax and shipping ($163.76 including a 15% reserve); it excludes tools, labor, and an external supply. Recalculate the BOM after the contact-level circuit is complete.
+The [BOM](bom-PLACEHOLDER.md) gives the current illustrative category-level estimate and retailer examples. Its relay and control-board quantities for Single Lane were updated (2026-10-13) to match the contact-level design; 2/4-Lane quantities remain preliminary allowances. The Single Lane estimate is $131.20 before tax and shipping ($150.88 including a 15% reserve); it excludes tools, labor, and an external supply. Recalculate the BOM if the circuit design changes.
 
 ## Acceptance checks
 

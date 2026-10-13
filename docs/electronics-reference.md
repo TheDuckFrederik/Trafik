@@ -44,10 +44,10 @@ Fixed-function CMOS counter/decoder ICs (not a microcontroller — no programmab
 
 | Category | Single Lane | 2 Lane | 4 Lane |
 | --- | ---: | ---: | ---: |
-| DPDT signal relay | 10 | 14 | 22 |
+| DPDT signal relay | 4 | 14 | 22 |
 | Control/driver PCB (or hand-wired perfboard) | 1 | 1 | 1 |
 
-Relay counts above are a planning allowance for the bypass/insert/interlock functions described in each variant's "Hardware implementation (Option B)" section, not a pin-for-pin netlist; verify against the exact relay's contact form before ordering.
+The Single Lane count (4) is the finalized quantity from the contact-level design in [single-lane-circuit.md](single-lane-circuit.md): one DPDT per loop-at-position insert stage (2 loops × 2 positions). The 2 and 4 Lane counts are planning allowances for the bypass/insert/interlock functions described in each variant's "Hardware implementation (Option B)" section, not pin-for-pin netlists; verify against the exact relay's contact form before ordering.
 
 ### Momentary footswitch (Option B only)
 

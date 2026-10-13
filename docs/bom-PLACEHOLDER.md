@@ -28,23 +28,23 @@ Use a regulated, isolated, center-negative 9 V supply rated for at least 100 mA 
 
 ## Single Lane Trafik
 
-Eight TS jacks: Instrument IN, TO 1, FX Send 1, FX Return 1, and Loop A/B Send/Return. Two loop-position footswitches; no lane switch. Relay quantity is a planning allowance for loop selection, bypass and interlock.
+Eight TS jacks: Instrument IN, TO 1, FX Send 1, FX Return 1, and Loop A/B Send/Return. Two loop-position footswitches; no lane switch. Quantities for this variant match the contact-level design in [single-lane-circuit.md](single-lane-circuit.md) (updated 2026-10-13): 4 relays and a 7-IC CMOS control board.
 
 | Item | Qty. | Unit estimate | Extended |
 | --- | ---: | ---: | ---: |
 | 1590B-size aluminum enclosure or equivalent | 1 | $35.00 | $35.00 |
 | ¼-inch TS mono jacks | 8 | $2.00 | $16.00 |
 | Momentary footswitches | 2 | $10.00 | $20.00 |
-| DPDT audio signal relays | 10 | $2.20 | $22.00 |
+| DPDT audio signal relays | 4 | $2.20 | $8.80 |
 | CMOS control/driver PCB | 1 | $22.00 | $22.00 |
-| Discrete logic, drivers, protection and passives | 1 lot | $10.00 | $10.00 |
+| Discrete logic, drivers, protection and passives | 1 lot | $12.00 | $12.00 |
 | Indicator LEDs | 8 | $0.30 | $2.40 |
 | Hook-up/shielded wire | 1 lot | $8.00 | $8.00 |
 | DC jack | 1 | $2.00 | $2.00 |
 | Hardware, standoffs, insulation, heat-shrink | 1 lot | $5.00 | $5.00 |
-| **Materials subtotal** |  |  | **$142.40** |
-| 15% sourcing reserve |  |  | **$21.36** |
-| **Estimated materials with reserve** |  |  | **$163.76** |
+| **Materials subtotal** |  |  | **$131.20** |
+| 15% sourcing reserve |  |  | **$19.68** |
+| **Estimated materials with reserve** |  |  | **$150.88** |
 
 ## 2 Lane Trafik
 
@@ -111,8 +111,10 @@ For jack alternatives, choose insulated-body TS jacks to simplify sleeve-ground 
 
 | Variant | Material subtotal | With 15% reserve | Add external supply if needed |
 | --- | ---: | ---: | ---: |
-| Single Lane | $142.40 | $163.76 | +$15–30 |
+| Single Lane | $131.20 | $150.88 | +$15–30 |
 | 2 Lane | $188.80 | $217.12 | +$15–30 |
 | 4 Lane | $254.00 | $292.10 | +$15–30 |
+
+The Single Lane totals reflect the contact-level circuit design (4 relays, 7-IC control board) as of 2026-10-13. The 2 and 4 Lane relay and control-board quantities remain planning allowances pending their own contact-level designs.
 
 These totals exclude taxes, tools, labor, finishing, and custom fabrication. The enclosure sizes are starting points only: confirm actual component dimensions, jack clearance, and footswitch spacing before purchase.
