@@ -1,4 +1,6 @@
-# Single Lane Trafik circuit design
+# Single Lane Trafik circuit design — Revision A (passive, archived)
+
+> **Archived 2026-10-13.** The product architecture pivoted to the active platform (three buffers, microcontroller control; see [architecture.md](architecture.md)). This passive, fixed-function-CMOS design is retained in full as the verified bench reference, the source of the relay contact matrix and allocation truth table, and the fallback design. Its KiCad capture (`SingleLane/SingleLane.kicad_sch`) remains netlist-verified with a clean ERC. Nothing on this page describes the active product circuit.
 
 > **Design status — Revision A (2026-10-13), not yet built.** This is a complete functional, contact-level design verified against every routing, allocation, power-loss, and indication requirement in [architecture.md](architecture.md) and [single-lane-PLACEHOLDER.md](single-lane-PLACEHOLDER.md). It has **not** been physically built or measured. The design is captured as a KiCad 10 schematic at `SingleLane/SingleLane.kicad_sch` (label-based connectivity; its exported netlist matches the pin-to-net tables in this document exactly, and it passes ERC with zero violations). Before fabrication: verify every pin number against the exact manufacturer datasheet for the parts you actually buy, and pass the build-gate checks in [build-guide.md](build-guide.md) §6–§7.
 

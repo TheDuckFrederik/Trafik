@@ -1,10 +1,12 @@
 # Trafik bill of materials and sourcing
 
+> **Platform note (2026-10-13):** The product family pivoted to the active platform (three buffers, microcontroller control, stompbox + 1U rack formats, 1–8 lanes made to order — see [architecture.md](architecture.md)). The estimates below price the **Revision A passive Single Lane design only**; they are retained as a baseline and do not include the active platform's op-amps, MCU, or rack hardware. Recalculate per SKU once the active contact-level designs exist.
+
 ## Price basis
 
 All amounts are **USD planning estimates as of 30 September 2026**, before sales tax and shipping. They are not live quotes; retailer stock, shipping, tax, and regional pricing vary. The base estimate uses a mix of low-volume parts from Tayda Electronics and a standard enclosure from a Hammond/1590-series retailer. For safety-critical fit and electrical ratings, use the specified part class rather than selecting on price alone.
 
-This BOM prices the Option B (relay-based) implementation described in [architecture.md](architecture.md#circuit-design-principles) and in each variant's "Hardware implementation (Option B)" section. For the part-category specification these line items reference (including the Option A mechanical alternative, which needs no relays, control PCB, or footswitches), see [electronics-reference.md](electronics-reference.md).
+This BOM prices the Revision A passive Single Lane design described in [single-lane-circuit.md](single-lane-circuit.md). For part-category specifications, see [electronics-reference.md](electronics-reference.md).
 
 Prices assume single-unit DIY builds. Tools, labor, finishing, custom PCB fabrication, and an external 9 V pedalboard supply are excluded. Add 15% to the material subtotal as a sourcing reserve for shipping, small-quantity price changes, and incidental hardware.
 
@@ -22,7 +24,7 @@ Prices assume single-unit DIY builds. Tools, labor, finishing, custom PCB fabric
 | DC input jack | 2.1 mm barrel, center-negative panel jack | Tayda; Mouser/DigiKey | $2.00 |
 | Fasteners/insulation | Jack nuts, switch nuts, PCB standoffs, insulating washers, heat-shrink | Tayda; local hardware supplier | Variant estimate below |
 
-Every part category above is defined in full, including the Option A mechanical-switch equivalents not priced here, in [electronics-reference.md](electronics-reference.md).
+Part categories for the active platform (microcontroller, buffers, rack hardware) are defined in [electronics-reference.md](electronics-reference.md); the table above reflects the Revision A passive design.
 
 Use a regulated, isolated, center-negative 9 V supply rated for at least 100 mA as a separate pedalboard supply. Confirm the assembled circuit’s actual current draw before choosing the supply. A suitable external adapter typically adds approximately **$15–30**; it is not included in the totals.
 
@@ -46,51 +48,30 @@ Eight TS jacks: Instrument IN, TO 1, FX Send 1, FX Return 1, and Loop A/B Send/R
 | 15% sourcing reserve |  |  | **$19.68** |
 | **Estimated materials with reserve** |  |  | **$150.88** |
 
-## 2 Lane Trafik
+## Multi-Lane Trafik (2–8 lanes, made to order)
 
-Eleven TS jacks: Instrument IN, TO 1–2, FX Send/Return 1–2, and Loop A/B Send/Return. Three momentary footswitches, including lane selection.
+Under the made-to-order model, multi-lane units are parameterized by lane count N rather than fixed SKUs. Materials scale approximately as: jacks = 3N+5; loop-insert relays fixed at 4 plus lane-selection relay groups growing with N; lane LEDs N; larger enclosure or 1U rack chassis; same two loop-position footswitches plus the device/lane switch; same control board plus lane drivers. Two illustrative points from the earlier fixed-SKU estimates (passive design basis, DIY pricing):
 
-| Item | Qty. | Unit estimate | Extended |
-| --- | ---: | ---: | ---: |
-| 1590DD-size aluminum enclosure or equivalent | 1 | $42.00 | $42.00 |
-| ¼-inch TS mono jacks | 11 | $2.00 | $22.00 |
-| Momentary footswitches | 3 | $10.00 | $30.00 |
-| DPDT audio signal relays | 14 | $2.20 | $30.80 |
-| CMOS control/driver PCB | 1 | $28.00 | $28.00 |
-| Discrete logic, drivers, protection and passives | 1 lot | $13.00 | $13.00 |
-| Indicator LEDs | 10 | $0.30 | $3.00 |
-| Hook-up/shielded wire | 1 lot | $12.00 | $12.00 |
-| DC jack | 1 | $2.00 | $2.00 |
-| Hardware, standoffs, insulation, heat-shrink | 1 lot | $6.00 | $6.00 |
-| **Materials subtotal** |  |  | **$188.80** |
-| 15% sourcing reserve |  |  | **$28.32** |
-| **Estimated materials with reserve** |  |  | **$217.12** |
+| Item | 2 Lane (illustrative) | 4 Lane (illustrative) |
+| --- | ---: | ---: |
+| Enclosure/chassis | $42.00 (1590DD-class) | $58.00 (1590XX-class) |
+| ¼-inch TS mono jacks (3N+5) | $22.00 (11) | $34.00 (17) |
+| Momentary footswitches (3) | $30.00 | $30.00 |
+| DPDT audio signal relays | $30.80 (14) | $48.40 (22) |
+| Control/driver PCB | $28.00 | $34.00 |
+| Discrete logic, drivers, protection, passives | $13.00 | $18.00 |
+| Indicator LEDs | $3.00 | $3.60 |
+| Wire, DC jack, hardware | $28.00 | $28.00 |
+| **Materials subtotal** | **$188.80** | **$254.00** |
+| **With 15% reserve** | **$217.12** | **$292.10** |
 
-## 4 Lane Trafik
-
-Seventeen TS jacks: Instrument IN, TO 1–4, FX Send/Return 1–4, and Loop A/B Send/Return. Three momentary footswitches and four lane indicators.
-
-| Item | Qty. | Unit estimate | Extended |
-| --- | ---: | ---: | ---: |
-| 1590XX-size aluminum enclosure or equivalent | 1 | $58.00 | $58.00 |
-| ¼-inch TS mono jacks | 17 | $2.00 | $34.00 |
-| Momentary footswitches | 3 | $10.00 | $30.00 |
-| DPDT audio signal relays | 22 | $2.20 | $48.40 |
-| CMOS control/driver PCB | 1 | $34.00 | $34.00 |
-| Discrete logic, drivers, protection and passives | 1 lot | $18.00 | $18.00 |
-| Indicator LEDs | 12 | $0.30 | $3.60 |
-| Hook-up/shielded wire | 1 lot | $18.00 | $18.00 |
-| DC jack | 1 | $2.00 | $2.00 |
-| Hardware, standoffs, insulation, heat-shrink | 1 lot | $8.00 | $8.00 |
-| **Materials subtotal** |  |  | **$254.00** |
-| 15% sourcing reserve |  |  | **$38.10** |
-| **Estimated materials with reserve** |  |  | **$292.10** |
+For the active platform (buffers, MCU, rack hardware for 1U units) and for lane counts other than 2 or 4, rebuild the estimate from the [electronics reference](electronics-reference.md) once the contact-level design for that configuration exists. At 8 lanes, allow for 29 jacks and verify chassis density.
 
 ## Shared vs. variant-specific parts
 
-**Shared:** TS audio-jack type; four Loop A/B jacks; two loop-position footswitches; four loop-state LEDs per position; DC input; CMOS debounce/counter/decoder approach; relay driver and protection parts; wiring and mounting consumables.
+**Shared:** TS audio-jack type; four Loop A/B jacks; loop-position footswitches; four loop-state LEDs per position; power input; relay driver and protection parts; three-buffer set; wiring and mounting consumables.
 
-**Variant-specific:** enclosure size; TO and device FX jack counts; lane-selection counter and center footswitch for 2/4 Lane; lane indicator count; control-board capacity; number of signal relays and wiring. Single Lane omits the device-selection hardware.
+**Configuration-specific (by lane count N and form factor):** enclosure or rack chassis; jack count (3N+5); lane-selection relay groups and the device/lane footswitch; lane indicator count; control-board capacity; rail hardware. Single Lane omits the device-selection hardware.
 
 The relay counts and control-PCB prices above are budgeting allowances for the described switching functions, not a manufacturer-specific circuit design or a final relay pin-for-pin netlist. Before ordering, select the actual relay model and verify its contact configuration against the final wiring matrix; increase quantities for spares if the build is your first relay assembly.
 
@@ -112,9 +93,9 @@ For jack alternatives, choose insulated-body TS jacks to simplify sleeve-ground 
 | Variant | Material subtotal | With 15% reserve | Add external supply if needed |
 | --- | ---: | ---: | ---: |
 | Single Lane | $131.20 | $150.88 | +$15–30 |
-| 2 Lane | $188.80 | $217.12 | +$15–30 |
-| 4 Lane | $254.00 | $292.10 | +$15–30 |
+| Multi-Lane, N=2 (illustrative) | $188.80 | $217.12 | +$15–30 |
+| Multi-Lane, N=4 (illustrative) | $254.00 | $292.10 | +$15–30 |
 
-The Single Lane totals reflect the contact-level circuit design (4 relays, 7-IC control board) as of 2026-10-13. The 2 and 4 Lane relay and control-board quantities remain planning allowances pending their own contact-level designs.
+All totals are passive-Revision-A-basis planning estimates as of 2026-10-13. Active-platform costs (buffers, MCU, rack hardware) and lane counts other than 1, 2, or 4 are not included; rebuild per configuration once its contact-level design exists.
 
 These totals exclude taxes, tools, labor, finishing, and custom fabrication. The enclosure sizes are starting points only: confirm actual component dimensions, jack clearance, and footswitch spacing before purchase.

@@ -1,6 +1,6 @@
 # Trafik fabrication and build guide
 
-This guide covers the shared assembly process for all three variants. Use the model-specific jack counts and panel arrangement in the variant documents and the [BOM](bom-PLACEHOLDER.md). Trafik carries instrument-level audio only. Do not connect speaker outputs or mains voltage to the unit.
+This guide covers the shared assembly process for all variants (Single Lane and the made-to-order Multi-Lane models in stompbox or rack format). Use the model-specific jack counts and panel arrangement in the variant documents and the [BOM](bom-PLACEHOLDER.md). Trafik carries instrument-level audio only. Do not connect speaker outputs or mains voltage to the unit.
 
 ## 1. Confirm the design and parts
 
@@ -18,29 +18,29 @@ Do not proceed with a guessed relay pinout or an unverified control-board schema
 
 1. Remove the enclosure lid and protect the finish with masking tape.
 2. Mark the perimeter and center of every panel component from the dimensioned drawing. Keep the physical layout: Instrument IN on the right, FX Return bank upper left, FX Send bank upper right, Loop B above Loop A on the left, TO bank along the bottom, and the switches across the middle.
-3. Place the center device switch only on the 2- and 4-lane models. Leave clear space for each state-indicator group beside the TO bank and between the FX banks.
+3. Place the center device switch only on the multi-lane models. Leave clear space for each state-indicator group beside the TO bank and between the FX banks.
 4. Check for internal collisions before drilling: relay/control PCB, lid ribs, jack bodies, switch bodies, wiring bundles and nuts must all clear one another.
 5. Center-punch the marks. Drill small pilot holes first, then enlarge with a step drill or correctly sized bit. Use the component maker’s panel cutout dimensions; do not assume all ¼-inch jacks or stomp switches share a mounting-hole size.
 6. Deburr both sides, remove all metal swarf, and clean the enclosure before installing electronics. Metal chips can short relay contacts or the control PCB.
 7. If using metal-body jacks, use insulating shoulder washers where specified to prevent unintended sleeve-to-enclosure bonds. Establish one deliberate ground-bonding scheme for all signal sleeves and the enclosure.
 
-The listed enclosure families are estimates, not guaranteed fit. A crowded 4-lane panel should be checked with actual plugs inserted and switches operated before committing to a finish.
+The listed enclosure families are estimates, not guaranteed fit. A crowded multi-lane panel should be checked with actual plugs inserted and switches operated before committing to a finish.
 
 ## 3. Install panel hardware
 
 1. Fit the audio jacks loosely and orient their solder lugs for accessible, short wiring.
 2. Label each jack before wiring: Instrument IN; TO n; FX Send n; FX Return n; Loop A Send/Return; Loop B Send/Return. Labels must follow the Trafik-side direction convention.
 3. Tighten jacks without rotating their bodies or damaging insulating washers.
-4. Install the momentary normally-open footswitches. The outer switches are Pre-FX and Pre-TO; the middle switch is Device on the 2/4-lane units.
+4. Install the momentary normally-open footswitches. The outer switches are Pre-FX and Pre-TO; the middle switch is Device on the multi-lane units.
 5. Install the DC jack with clearance from all audio terminals. Mark its polarity on the board and inside the enclosure.
 6. Install LEDs with the correct polarity and fit retaining hardware. Label loop states Off, A, B, A→B; label device LEDs 1…N.
 7. Fit the control/relay board on insulating standoffs. Keep relay contact terminals physically separate from the DC and counter wiring.
 
 ## 4. Wire the control and power circuit
 
-1. Wire the footswitch contacts only to the debounced CMOS counter inputs; footswitches must not carry audio.
+1. Wire the footswitch contacts only to the control-board inputs (debounced by the controller); footswitches must not carry audio.
 2. Configure each loop-position counter for the four-state sequence Off → A → B → A+B → Off. Configure the lane counter for 1…N and wrap at the number of lanes.
-3. Add a defined power-up reset to the counters: loop positions Off, device lane 1. Do not leave CMOS inputs floating.
+3. Verify the defined power-up state: loop positions Off, device lane 1, and that a controller fault or watchdog reset de-energizes every relay (fail-safe straight-through).
 4. Connect counter decoders to appropriately rated transistor relay drivers. Fit coil suppression diodes or the protection specified by the relay/driver design, respecting coil polarity.
 5. Drive the state LEDs from the applied-state decoder after loop-allocation interlock, so the display reflects the audio contacts rather than only the requested counter state.
 6. Connect the DC input to the protected 9 V control rail with reverse-polarity protection and local decoupling. Confirm the completed board’s current draw before connecting an external supply.
@@ -63,7 +63,7 @@ Work from a verified routing table or schematic for the exact relay used. Relay 
 3. Wire the loop bypass/selection relay contacts, then test each loop state before adding device-lane wiring.
 4. Wire each lane’s TO and matching FX pair to the lane-selection relay group. Ensure TO and the corresponding FX pair change together and use break-before-make switching.
 5. Wire the duplicate-loop interlock so a physical loop cannot be connected at both positions simultaneously. Give Pre-FX the specified priority and feed the applied state back to the indicator decoder.
-6. Separate contact wiring from relay coils, CMOS clock/reset lines and LED conductors. Cross audio and control bundles at right angles if crossing is unavoidable.
+6. Separate contact wiring from relay coils, clock/control lines and LED conductors. Cross audio and control bundles at right angles if crossing is unavoidable.
 7. Inspect every joint for solder bridges, loose strands, cold joints, and exposed conductor that could touch the enclosure or an adjacent relay terminal.
 
 ## 6. Initial electrical checks
