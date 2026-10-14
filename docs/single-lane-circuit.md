@@ -2,13 +2,15 @@
 
 > **Archived 2026-10-13.** The product architecture pivoted to the active platform (three buffers, microcontroller control; see [architecture.md](architecture.md)). This passive, fixed-function-CMOS design is retained in full as the verified bench reference, the source of the relay contact matrix and allocation truth table, and the fallback design. Its KiCad capture (`SingleLane/SingleLane.kicad_sch`) remains netlist-verified with a clean ERC. Nothing on this page describes the active product circuit.
 
-> **Design status — Revision A (2026-10-13), not yet built.** This is a complete functional, contact-level design verified against every routing, allocation, power-loss, and indication requirement in [architecture.md](architecture.md) and [single-lane-PLACEHOLDER.md](single-lane-PLACEHOLDER.md). It has **not** been physically built or measured. The design is captured as a KiCad 10 schematic at `SingleLane/SingleLane.kicad_sch` (label-based connectivity; its exported netlist matches the pin-to-net tables in this document exactly, and it passes ERC with zero violations). Before fabrication: verify every pin number against the exact manufacturer datasheet for the parts you actually buy, and pass the build-gate checks in [build-guide.md](build-guide.md) §6–§7.
+> **Archived reference — Revision A (passive, CMOS).** The production platform is now the active, firmware-controlled design specified in [architecture.md](architecture.md); this page and `SingleLane/SingleLane.kicad_sch` remain the verified reference for the relay contact matrix, allocation truth tables, and a passive-fallback build.
+>
+> **Design status — Revision A (2026-10-13), not yet built.** This is a complete functional, contact-level design verified against every routing, allocation, power-loss, and indication requirement in [architecture.md](architecture.md) and [single-lane-prototype.md](single-lane-prototype.md). It has **not** been physically built or measured. The design is captured as a KiCad 10 schematic at `SingleLane/SingleLane.kicad_sch` (label-based connectivity; its exported netlist matches the pin-to-net tables in this document exactly, and it passes ERC with zero violations). Before fabrication: verify every pin number against the exact manufacturer datasheet for the parts you actually buy, and pass the build-gate checks in [build-guide.md](build-guide.md) §6–§7.
 
 ## Scope
 
 This document is the circuit design for the **Single Lane Trafik product**: two independently controlled loop positions (Pre-FX, Pre-TO), one fixed device path, eight jacks, two momentary footswitches, eight state LEDs, 9 V pedal power, no firmware.
 
-It supersedes the "relay count cannot be finalized" caveat in [single-lane-PLACEHOLDER.md](single-lane-PLACEHOLDER.md) with a concrete design: **4 DPDT relays and 7 CMOS ICs**. It is separate from the earlier [single-loop bench prototype](single-loop-prototype.md), which proved the debounce/flip-flop/driver pattern on one buffered loop; this product circuit is fully passive in the audio path and needs no op amp and no 5 V regulator.
+It supersedes the "relay count cannot be finalized" caveat in [single-lane-prototype.md](single-lane-prototype.md) with a concrete design: **4 DPDT relays and 7 CMOS ICs**. It is separate from the earlier [single-loop bench prototype](single-loop-prototype.md), which proved the debounce/flip-flop/driver pattern on one buffered loop; this product circuit is fully passive in the audio path and needs no op amp and no 5 V regulator.
 
 Key differences from the bench prototype, and why:
 
@@ -267,7 +269,7 @@ Specific starting suggestions; verify package, pinout, and ratings in the curren
 | C21 | 1 | 10 µF ≥16 V electrolytic | Local bulk near relay/IC cluster |
 | — | 1 lot | DIP sockets, standoffs, hook-up wire, shielded cable for long audio runs, heat-shrink | Use IC sockets: 7 DIPs are far easier to replace than to re-solder in a product |
 
-Panel fit: 8 jacks + 2 stomps + 8 LEDs + DC jack in a 1590B-class enclosure remains subject to the full-size fit check in [single-lane-PLACEHOLDER.md](single-lane-PLACEHOLDER.md); fall back to 1590BB-class if the mock-up is tight.
+Panel fit: 8 jacks + 2 stomps + 8 LEDs + DC jack in a 1590B-class enclosure remains subject to the full-size fit check in [single-lane-prototype.md](single-lane-prototype.md); fall back to 1590BB-class if the mock-up is tight.
 
 ## Test additions for this circuit
 

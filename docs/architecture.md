@@ -8,10 +8,10 @@ Trafik is one platform sold as a lane count in one of two form factors, made to 
 
 | Parameter | Value |
 | --- | --- |
-| Device lanes | 1–8, made to order (custom lane counts within 1–8 on request) |
+| Device lanes | 1–4 as standard; custom counts up to 8 on order (rack format) |
 | Form factors | Stompbox (floor, 1590-class, 9 V pedal supply) and rack (1U chassis, internal linear supply, ±15 V audio rails) |
-| Form-factor guidance | Stompbox suits 1–4 lanes by panel density; rack suits any count 1–8 |
-| Footswitches | Momentary normally-open SPST (2-pin), one per loop position, plus device/lane control where applicable |
+| Form-factor guidance | Stompbox suits 1–4 lanes by panel density; rack suits any count up to 8 |
+| Footswitches | Momentary normally-open SPST (2-pin), one per loop position, plus device/lane control where applicable; onboard (stompbox) or via standard TS jacks (see [Remote footswitches](#remote-footswitches)) |
 | Pedal loops | Always 2 (Loop A, Loop B), shared between the two loop positions |
 
 Mono ¼-inch TS throughout, instrument-level audio only. Never connect speaker-level or mains signals.
@@ -56,6 +56,8 @@ The buffer map is fixed at **three unity buffers regardless of lane count**:
 | 2 | Loop B Return (inside the unit) | Drives the chain output whenever Loop B is last; serves both chains |
 | 3 | Instrument chain output, before the lane (TO) selector | Drives the long output cable in the all-loops-off state; one stage feeds every TO port |
 
+**Buffer-bypass relay (fail-safe):** buffer 3 sits permanently in the instrument chain, so it is the one stage that must never block audio when the unit is unpowered. A dedicated DPDT bypass relay — de-energized = hardwire through, energized = buffer in circuit — keeps the instrument path a literal wire with DC removed. Buffers 1 and 2 need no bypass relays: on power loss the loop-insert relays de-energize and remove the loops (and the return buffers inside them) from the circuit entirely.
+
 **The fuzz rule (deliberate constraint):** nothing upstream of a loop return is ever buffered. A fuzz (or any impedance-interacting pedal) placed first in Loop A sees the instrument's passive signal path, exactly as if wired directly, modulo relay contact resistance. Loop B's first pedal sees a buffered feed whenever Loop A precedes it — place impedance-critical pedals in Loop A.
 
 Rationale per location:
@@ -97,13 +99,29 @@ Requirements on the control design:
 - One clean count per press (software debounce); each position cycles Off → A → B → A→B → Off independently.
 - Power-on state: both loop positions Off, lane 1 selected.
 - The Pre-FX-priority allocation is enforced before relays and LEDs, per the equations above.
-- **Fail-safe behavior:** on loss of power or firmware fault, all relays de-energize to a state that passes the instrument path straight through to lane 1's TO output, bypasses both loop positions, and leaves all other lane outputs isolated. Because the input-to-first-loop-return path is passive, audio continues to pass with DC removed. A watchdog and a defined boot/recovery state are required so a firmware hang cannot hold a relay mid-state indefinitely.
+- **Fail-safe behavior:** on loss of power or firmware fault, all relays de-energize to a state that passes the instrument path straight through to lane 1's TO output, bypasses both loop positions, and leaves all other lane outputs isolated. The instrument output buffer's bypass relay de-energizes with the supply, so the path is a hardwire — combined with the passive front end, audio continues to pass with DC removed. A watchdog and a defined boot/recovery state are required so a firmware hang cannot hold a relay mid-state indefinitely.
 - Relay coils: drivers rated for pull-in current with correctly oriented flyback clamps; coil voltage per form factor (9 V stompbox rail / logic-rail control in the rack with appropriate drivers).
 - Relay contacts, not logic pins, carry audio. Break-before-make switching for lane changes. Relays with low-level (gold/clad) contacts suitable for instrument signals.
 - Lane count is a build parameter, not a redesign: the firmware and driver hardware are lane-count agnostic; lanes 2–N add relay groups and jacks only. A built-in self-test mode that walks the full state × relay truth table is required for made-to-order units.
 - MIDI and preset storage are platform roadmap features (rack format first); they must not compromise the fail-safe requirements above.
 
 The Revision A CMOS implementation ([single-lane-circuit.md](single-lane-circuit.md)) demonstrates the equivalent fixed-function logic for the Single Lane and remains the reference for the allocation truth table and relay contact matrix.
+
+## Remote footswitches
+
+Every control input is a two-terminal interface: a switch node (pulled up to the logic supply, read by the MCU) and ground. Pressed = short to ground.
+
+- **Stompbox format:** onboard soft-touch momentary stomps wire to the same two nets.
+- **Rack format / remote use:** one TS jack per control — Pre-FX, Pre-TO, and the device/lane control on Multi-Lane units. Any 2-pin momentary normally-open footswitch plus a standard mono instrument cable works: tip = switch node, sleeve = ground. No proprietary connectors.
+- **Unplug-safe:** an empty jack reads the pull-up, i.e. "released". A missing, broken, or unplugged footswitch leaves the unit on its current state — it can never look like a stuck press.
+- Panel-exposed inputs get a series resistor and clamp protection ahead of the MCU pin; firmware debounce makes contact quality noncritical.
+
+## Optional patch panel
+
+A front-panel set of **normalled** TS jacks duplicating the connections a desktop/rack user wants within reach: Instrument IN, Loop A/B Send and Return, and the footswitch inputs (2 jacks on Single Lane; 3 with the device/lane control on Multi-Lane).
+
+- **Normalled (switched) jacks only:** with nothing plugged at the front, the normal contact passes the underlying connection through; plugging into the front jack breaks the normal. This must never become a parallel Y of two jacks on one net.
+- The patch panel is a convenience surface: isolated jacks, sleeves returned to the audio star, no change to the grounding scheme or the signal architecture.
 
 ## Power, grounding, and wiring
 

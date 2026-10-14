@@ -1,15 +1,15 @@
-# Multi-Lane Trafik (2–8 lanes, made to order)
+# Multi-Lane Trafik (2–4 standard, up to 8 made to order)
 
 ## Purpose
 
-Multi-Lane Trafik adds the device/lane selector to the shared platform: `N` device lanes (2–8), each with a TO output and a matched FX Send/FX Return pair, plus the same two shared pedal-loop positions as the Single Lane. Lane counts are a **build parameter** — studios can order a specific number of lanes within 1–8, since the control core, firmware, and buffer architecture are lane-count agnostic; lanes add relay groups and jacks only.
+Multi-Lane Trafik adds the device/lane selector to the shared platform: `N` device lanes, each with a TO output and a matched FX Send/FX Return pair, plus the same two shared pedal-loop positions as the Single Lane. Standard lane counts are 2–4; studios can order a specific count up to 8 (rack format), since the control core, firmware, and buffer architecture are lane-count agnostic; lanes add relay groups and jacks only.
 
 ## Form factors
 
 | Format | Lanes | Notes |
 | --- | --- | --- |
 | Stompbox (1590-class, 9 V) | 2–4 | Panel-density limit; TO/FX banks along bottom and sides |
-| 1U rack (internal supply, ±15 V audio rails) | 1–8 | Jacks on the rear panel; suits the long-cable studio rig; IEC inlet, logic + bipolar audio rails |
+| 1U rack (internal supply, ±15 V audio rails) | 2–8 | Jacks on the rear panel; suits the long-cable studio rig; IEC inlet, logic + bipolar audio rails |
 
 At 8 lanes the unit carries 3N+5 = 29 TS jacks — verify rear-panel density and connector clearance on a full-size mock-up before fabrication.
 
@@ -40,7 +40,7 @@ The contact-level circuit has not been designed. Refer to [electronics-reference
 
 ## Estimated materials
 
-Not yet estimated for the active platform. Scale from the [Single Lane Revision A BOM](bom-PLACEHOLDER.md) as a planning aid only: jacks = 3N+5; loop-insert relays fixed at 4; lane-selection relay groups grow with N; buffers fixed at 3; lane LEDs N. Recalculate after the contact-level design exists.
+Not yet estimated for the active platform. Scale from the [Single Lane Revision A BOM](bom-prototype.md) as a planning aid only: jacks = 3N+5; relays = 4 loop-insert + 1 buffer-bypass (fixed) plus lane-selection groups that grow with N; buffers fixed at 3; lane LEDs N. Recalculate after the contact-level design exists.
 
 ## Acceptance checks
 

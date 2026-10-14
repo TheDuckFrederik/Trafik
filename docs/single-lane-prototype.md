@@ -34,7 +34,7 @@ The physical Loop A and Loop B send/return pairs are shared between the position
 
 ## Electronics and power
 
-Implements the active platform described in [architecture.md](architecture.md): three unity buffers (Loop A Return, Loop B Return, instrument output ahead of the lane selector — here a single fixed output), passive signal path from the instrument jack to the first loop return, microcontroller control of the two loop-position states and the Pre-FX-priority allocation, transistor relay drivers, and break-before-make relay audio switching. Two momentary SPST footswitches; eight state LEDs driven to show the applied state.
+Implements the active platform described in [architecture.md](architecture.md): three unity buffers (Loop A Return, Loop B Return, instrument output ahead of the lane selector — here a single fixed output, with its fail-safe bypass relay), passive signal path from the instrument jack to the first loop return, microcontroller control of the two loop-position states and the Pre-FX-priority allocation, transistor relay drivers, and break-before-make relay audio switching. Two momentary SPST footswitches (onboard, or remote via two TS jacks on the optional patch panel); eight state LEDs driven to show the applied state.
 
 Power: regulated isolated 9 V center-negative pedal supply sized above the measured worst-case draw (relays, logic, buffers). On the 9 V rail, use a rail-to-rail op-amp for the buffers or validate headroom explicitly.
 
@@ -42,7 +42,7 @@ The contact-level circuit for the active platform has not been designed. Refer t
 
 ## Estimated materials
 
-The [BOM](bom-PLACEHOLDER.md) currently prices the Revision A passive design ($131.20 materials / $150.88 with reserve). The active platform BOM (buffers, MCU, drivers) is pending its circuit design; recalculate before ordering.
+The [BOM](bom-prototype.md) currently prices the Revision A passive design ($131.20 materials / $150.88 with reserve). The active platform BOM (buffers, MCU, drivers) is pending its circuit design; recalculate before ordering.
 
 ## Acceptance checks
 

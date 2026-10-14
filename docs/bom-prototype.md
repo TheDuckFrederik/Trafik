@@ -48,6 +48,8 @@ Eight TS jacks: Instrument IN, TO 1, FX Send 1, FX Return 1, and Loop A/B Send/R
 | 15% sourcing reserve |  |  | **$19.68** |
 | **Estimated materials with reserve** |  |  | **$150.88** |
 
+**Active platform deltas (planning note):** the active Single Lane replaces the 7-IC CMOS control board with an MCU, adds three unity buffers (one quad op-amp), a 5 V logic rail, and a fifth relay (instrument-output buffer bypass, +$2.20). Indicative active-platform materials ≈ **$138** before reserve; recalculate when the active circuit design exists.
+
 ## Multi-Lane Trafik (2–8 lanes, made to order)
 
 Under the made-to-order model, multi-lane units are parameterized by lane count N rather than fixed SKUs. Materials scale approximately as: jacks = 3N+5; loop-insert relays fixed at 4 plus lane-selection relay groups growing with N; lane LEDs N; larger enclosure or 1U rack chassis; same two loop-position footswitches plus the device/lane switch; same control board plus lane drivers. Two illustrative points from the earlier fixed-SKU estimates (passive design basis, DIY pricing):

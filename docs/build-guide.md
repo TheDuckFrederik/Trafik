@@ -1,6 +1,6 @@
 # Trafik fabrication and build guide
 
-This guide covers the shared assembly process for all variants (Single Lane and the made-to-order Multi-Lane models in stompbox or rack format). Use the model-specific jack counts and panel arrangement in the variant documents and the [BOM](bom-PLACEHOLDER.md). Trafik carries instrument-level audio only. Do not connect speaker outputs or mains voltage to the unit.
+This guide covers the shared assembly process for all variants (Single Lane and the made-to-order Multi-Lane models in stompbox or rack format). Use the model-specific jack counts and panel arrangement in the variant documents and the [BOM](bom-prototype.md). Trafik carries instrument-level audio only. Do not connect speaker outputs or mains voltage to the unit.
 
 ## 1. Confirm the design and parts
 

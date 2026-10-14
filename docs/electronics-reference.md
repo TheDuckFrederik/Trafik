@@ -1,6 +1,6 @@
 # Trafik electronics reference
 
-This file consolidates the distinct electronics part categories used across the Trafik family, deduplicated, so a builder can search for and source parts (from any manufacturer) and compile their own bill of materials. It covers **what** to buy, not **where** or **for how much** — for priced examples and retailer alternatives, see the [BOM](bom-PLACEHOLDER.md). For the circuit-level context, see [architecture.md](architecture.md) and the variant pages ([Single Lane](single-lane-PLACEHOLDER.md), [Multi-Lane](multi-lane-PLACEHOLDER.md)).
+This file consolidates the distinct electronics part categories used across the Trafik family, deduplicated, so a builder can search for and source parts (from any manufacturer) and compile their own bill of materials. It covers **what** to buy, not **where** or **for how much** — for priced examples and retailer alternatives, see the [BOM](bom-prototype.md). For the circuit-level context, see [architecture.md](architecture.md) and the variant pages ([Single Lane](single-lane-prototype.md), [Multi-Lane](multi-lane-prototype.md)).
 
 The reference reflects the **active platform**: relay-switched audio, microcontroller control, three unity buffers, passive signal path from the instrument jack to the first loop return. (The archived passive/CMOS Revision A parts are listed in [single-lane-circuit.md](single-lane-circuit.md).)
 
@@ -12,9 +12,9 @@ DPDT (or the contact form the lane design requires), non-latching, sealed prefer
 
 | Category | Single Lane | Multi-Lane (N = 2–8) |
 | --- | ---: | ---: |
-| DPDT signal relay | 4 (loop inserts) | 4 (loop inserts) + lane-selection groups scaling with N |
+| DPDT signal relay | 5 (4 loop inserts + 1 buffer-bypass) | 5 (4 loop inserts + 1 buffer-bypass) + lane-selection groups scaling with N |
 
-Loop-insert relays are fixed at 4 for the whole family (two loops × two positions); only the lane-selection relay groups grow with lane count.
+Loop-insert relays are fixed at 4 for the whole family (two loops × two positions), plus one instrument-output buffer-bypass relay; only the lane-selection relay groups grow with lane count.
 
 ### Relay drivers and suppression
 

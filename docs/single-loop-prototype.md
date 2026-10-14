@@ -4,7 +4,7 @@
 
 ## Scope and relationship to Single Lane Trafik
 
-This document records a **separate, one-loop bench prototype** based on the earlier proposed circuit: buffered input, one relay-bypassed send/return loop, one soft-touch switch, one state LED, and a 9 V pedal supply. It is not the complete Single Lane Trafik product described in [single-lane-PLACEHOLDER.md](single-lane-PLACEHOLDER.md), which has two independently controlled loop positions and the fixed device FX path. It also does not replace the product routing and control requirements in [architecture.md](architecture.md).
+This document records a **separate, one-loop bench prototype** based on the earlier proposed circuit: buffered input, one relay-bypassed send/return loop, one soft-touch switch, one state LED, and a 9 V pedal supply. It is not the complete Single Lane Trafik product described in [single-lane-prototype.md](single-lane-prototype.md), which has two independently controlled loop positions and the fixed device FX path. It also does not replace the product routing and control requirements in [architecture.md](architecture.md).
 
 The buffer is active, but the signal at all four audio jacks is AC-coupled and referenced to audio ground. The relay's **de-energized** contact state bypasses the external loop; its energized state inserts the loop. This is not a hardwire true-bypass or power-off signal path: with DC removed the buffer stops operating, even though the relay returns to its loop-bypass contacts. The control logic uses a CD4013 toggle flip-flop and a Schmitt-trigger debounce gate.
 
