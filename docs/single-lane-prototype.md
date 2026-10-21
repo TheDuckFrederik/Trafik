@@ -38,7 +38,7 @@ Implements the active platform described in [architecture.md](architecture.md): 
 
 Power: regulated isolated 9 V center-negative pedal supply sized above the measured worst-case draw (relays, logic, buffers). On the 9 V rail, use a rail-to-rail op-amp for the buffers or validate headroom explicitly.
 
-The contact-level circuit for the active platform has not been designed. Refer to [electronics-reference.md](electronics-reference.md) for part-selection criteria and [build-guide.md](build-guide.md) for the pre-fabrication gate and test procedure. The Revision A passive circuit remains the reference for the relay contact matrix and allocation truth table.
+The contact-level circuit for the active platform is specified with exact parts, values, and pin assignments in [single-lane-circuit-b.md](single-lane-circuit-b.md) (Revision B, 2026-10-20) — schematic drawing and bench verification pending. Refer to [electronics-reference.md](electronics-reference.md) for part-selection criteria and [build-guide.md](build-guide.md) for the pre-fabrication gate and test procedure. The Revision A passive circuit remains the reference for the relay contact matrix and allocation truth table.
 
 ## Estimated materials
 
