@@ -1,0 +1,7520 @@
+{
+ "directed": false,
+ "multigraph": false,
+ "graph": {
+  "schema_version": 1,
+  "graphify_version": "0.9.93"
+ },
+ "nodes": [
+  {
+   "id": "part_U1",
+   "label": "U1",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "u1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "ATmega328P-PU microcontroller \u00b7 ATmega328P-PU"
+   }
+  },
+  {
+   "id": "part_U2",
+   "label": "U2",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "u2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "LMC660AIN quad op-amp (3 buffers + spare) \u00b7 LMC660AIN"
+   }
+  },
+  {
+   "id": "part_U3",
+   "label": "U3",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "part",
+   "norm_label": "u3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "78L05 5V regulator \u00b7 78L05"
+   }
+  },
+  {
+   "id": "part_K1",
+   "label": "K1",
+   "_origin": "ast",
+   "community": 2,
+   "community_name": "Chain 1 \u2014 instrument path",
+   "file_type": "part",
+   "norm_label": "k1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "Loop A insert @ Pre-FX \u00b7 TQ2-9V"
+   }
+  },
+  {
+   "id": "part_K2",
+   "label": "K2",
+   "_origin": "ast",
+   "community": 2,
+   "community_name": "Chain 1 \u2014 instrument path",
+   "file_type": "part",
+   "norm_label": "k2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "Loop B insert @ Pre-FX \u00b7 TQ2-9V"
+   }
+  },
+  {
+   "id": "part_K3",
+   "label": "K3",
+   "_origin": "ast",
+   "community": 3,
+   "community_name": "Chain 2 \u2014 device FX path",
+   "file_type": "part",
+   "norm_label": "k3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "Loop A insert @ Pre-TO \u00b7 TQ2-9V"
+   }
+  },
+  {
+   "id": "part_K4",
+   "label": "K4",
+   "_origin": "ast",
+   "community": 3,
+   "community_name": "Chain 2 \u2014 device FX path",
+   "file_type": "part",
+   "norm_label": "k4",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "Loop B insert @ Pre-TO \u00b7 TQ2-9V"
+   }
+  },
+  {
+   "id": "part_K5",
+   "label": "K5",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "k5",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "Output-buffer bypass (fail-safe) \u00b7 TQ2-9V"
+   }
+  },
+  {
+   "id": "part_Q1",
+   "label": "Q1",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "part",
+   "norm_label": "q1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "coil driver for K1 \u00b7 2N3904"
+   }
+  },
+  {
+   "id": "part_Q2",
+   "label": "Q2",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "part",
+   "norm_label": "q2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "coil driver for K2 \u00b7 2N3904"
+   }
+  },
+  {
+   "id": "part_Q3",
+   "label": "Q3",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "part",
+   "norm_label": "q3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "coil driver for K3 \u00b7 2N3904"
+   }
+  },
+  {
+   "id": "part_Q4",
+   "label": "Q4",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "part",
+   "norm_label": "q4",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "coil driver for K4 \u00b7 2N3904"
+   }
+  },
+  {
+   "id": "part_Q5",
+   "label": "Q5",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "part",
+   "norm_label": "q5",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "coil driver for K5 \u00b7 2N3904"
+   }
+  },
+  {
+   "id": "part_D1",
+   "label": "D1",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "part",
+   "norm_label": "d1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "flyback for K1 \u00b7 1N4148"
+   }
+  },
+  {
+   "id": "part_D2",
+   "label": "D2",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "part",
+   "norm_label": "d2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "flyback for K2 \u00b7 1N4148"
+   }
+  },
+  {
+   "id": "part_D3",
+   "label": "D3",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "part",
+   "norm_label": "d3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "flyback for K3 \u00b7 1N4148"
+   }
+  },
+  {
+   "id": "part_D4",
+   "label": "D4",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "part",
+   "norm_label": "d4",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "flyback for K4 \u00b7 1N4148"
+   }
+  },
+  {
+   "id": "part_D5",
+   "label": "D5",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "part",
+   "norm_label": "d5",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "flyback for K5 \u00b7 1N4148"
+   }
+  },
+  {
+   "id": "part_D6",
+   "label": "D6",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "part",
+   "norm_label": "d6",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "reverse-polarity protection \u00b7 1N5817"
+   }
+  },
+  {
+   "id": "part_LED1",
+   "label": "LED1",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "led1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "state LED \u2014 white (Off) \u00b7 white"
+   }
+  },
+  {
+   "id": "part_LED2",
+   "label": "LED2",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "led2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "state LED \u2014 green (A) \u00b7 green"
+   }
+  },
+  {
+   "id": "part_LED3",
+   "label": "LED3",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "led3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "state LED \u2014 red (B) \u00b7 red"
+   }
+  },
+  {
+   "id": "part_LED4",
+   "label": "LED4",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "led4",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "state LED \u2014 amber (A\u2192B) \u00b7 amber"
+   }
+  },
+  {
+   "id": "part_LED5",
+   "label": "LED5",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "led5",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "state LED \u2014 white (Off) \u00b7 white"
+   }
+  },
+  {
+   "id": "part_LED6",
+   "label": "LED6",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "led6",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "state LED \u2014 green (A) \u00b7 green"
+   }
+  },
+  {
+   "id": "part_LED7",
+   "label": "LED7",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "led7",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "state LED \u2014 red (B) \u00b7 red"
+   }
+  },
+  {
+   "id": "part_LED8",
+   "label": "LED8",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "led8",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "state LED \u2014 amber (A\u2192B) \u00b7 amber"
+   }
+  },
+  {
+   "id": "part_SW1",
+   "label": "SW1",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "sw1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "Pre-FX footswitch (momentary NO) \u00b7 SPST-NO"
+   }
+  },
+  {
+   "id": "part_SW2",
+   "label": "SW2",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "sw2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "Pre-TO footswitch (momentary NO) \u00b7 SPST-NO"
+   }
+  },
+  {
+   "id": "part_J1",
+   "label": "J1",
+   "_origin": "ast",
+   "community": 2,
+   "community_name": "Chain 1 \u2014 instrument path",
+   "file_type": "part",
+   "norm_label": "j1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "Instrument IN"
+   }
+  },
+  {
+   "id": "part_J2",
+   "label": "J2",
+   "_origin": "ast",
+   "community": 2,
+   "community_name": "Chain 1 \u2014 instrument path",
+   "file_type": "part",
+   "norm_label": "j2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "TO 1 output"
+   }
+  },
+  {
+   "id": "part_J3",
+   "label": "J3",
+   "_origin": "ast",
+   "community": 3,
+   "community_name": "Chain 2 \u2014 device FX path",
+   "file_type": "part",
+   "norm_label": "j3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "FX Send 1 output"
+   }
+  },
+  {
+   "id": "part_J4",
+   "label": "J4",
+   "_origin": "ast",
+   "community": 3,
+   "community_name": "Chain 2 \u2014 device FX path",
+   "file_type": "part",
+   "norm_label": "j4",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "FX Return 1 input"
+   }
+  },
+  {
+   "id": "part_J5",
+   "label": "J5",
+   "_origin": "ast",
+   "community": 4,
+   "community_name": "Pedal loops",
+   "file_type": "part",
+   "norm_label": "j5",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "Loop A Send"
+   }
+  },
+  {
+   "id": "part_J6",
+   "label": "J6",
+   "_origin": "ast",
+   "community": 4,
+   "community_name": "Pedal loops",
+   "file_type": "part",
+   "norm_label": "j6",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "Loop A Return"
+   }
+  },
+  {
+   "id": "part_J7",
+   "label": "J7",
+   "_origin": "ast",
+   "community": 4,
+   "community_name": "Pedal loops",
+   "file_type": "part",
+   "norm_label": "j7",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "Loop B Send"
+   }
+  },
+  {
+   "id": "part_J8",
+   "label": "J8",
+   "_origin": "ast",
+   "community": 4,
+   "community_name": "Pedal loops",
+   "file_type": "part",
+   "norm_label": "j8",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "Loop B Return"
+   }
+  },
+  {
+   "id": "part_J9",
+   "label": "J9",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "part",
+   "norm_label": "j9",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "9V DC input"
+   }
+  },
+  {
+   "id": "part_J10",
+   "label": "J10",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "j10",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "AVR ISP header"
+   }
+  },
+  {
+   "id": "part_J11",
+   "label": "J11",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "j11",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "self-test strap"
+   }
+  },
+  {
+   "id": "part_R1",
+   "label": "R1",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "r1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 470R"
+   }
+  },
+  {
+   "id": "part_R2",
+   "label": "R2",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "r2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1k"
+   }
+  },
+  {
+   "id": "part_R3",
+   "label": "R3",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "r3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1k"
+   }
+  },
+  {
+   "id": "part_R4",
+   "label": "R4",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "r4",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1k"
+   }
+  },
+  {
+   "id": "part_R5",
+   "label": "R5",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "r5",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 470R"
+   }
+  },
+  {
+   "id": "part_R6",
+   "label": "R6",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "r6",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1k"
+   }
+  },
+  {
+   "id": "part_R7",
+   "label": "R7",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "r7",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1k"
+   }
+  },
+  {
+   "id": "part_R8",
+   "label": "R8",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "part",
+   "norm_label": "r8",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1k"
+   }
+  },
+  {
+   "id": "part_R9",
+   "label": "R9",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "r9",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 4.7k"
+   }
+  },
+  {
+   "id": "part_R10",
+   "label": "R10",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "r10",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 4.7k"
+   }
+  },
+  {
+   "id": "part_R11",
+   "label": "R11",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "r11",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 4.7k"
+   }
+  },
+  {
+   "id": "part_R12",
+   "label": "R12",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "r12",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 4.7k"
+   }
+  },
+  {
+   "id": "part_R13",
+   "label": "R13",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "r13",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 4.7k"
+   }
+  },
+  {
+   "id": "part_R14",
+   "label": "R14",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "r14",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 100k"
+   }
+  },
+  {
+   "id": "part_R15",
+   "label": "R15",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "r15",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 100k"
+   }
+  },
+  {
+   "id": "part_R16",
+   "label": "R16",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "r16",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 100k"
+   }
+  },
+  {
+   "id": "part_R17",
+   "label": "R17",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "r17",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 100k"
+   }
+  },
+  {
+   "id": "part_R18",
+   "label": "R18",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "r18",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 100k"
+   }
+  },
+  {
+   "id": "part_R19",
+   "label": "R19",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "part",
+   "norm_label": "r19",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 100k"
+   }
+  },
+  {
+   "id": "part_R20",
+   "label": "R20",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "part",
+   "norm_label": "r20",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 100k"
+   }
+  },
+  {
+   "id": "part_R21",
+   "label": "R21",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "r21",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1k"
+   }
+  },
+  {
+   "id": "part_R22",
+   "label": "R22",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "r22",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1k"
+   }
+  },
+  {
+   "id": "part_R23",
+   "label": "R23",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "r23",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 10k"
+   }
+  },
+  {
+   "id": "part_R24",
+   "label": "R24",
+   "_origin": "ast",
+   "community": 2,
+   "community_name": "Chain 1 \u2014 instrument path",
+   "file_type": "part",
+   "norm_label": "r24",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R25",
+   "label": "R25",
+   "_origin": "ast",
+   "community": 2,
+   "community_name": "Chain 1 \u2014 instrument path",
+   "file_type": "part",
+   "norm_label": "r25",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R26",
+   "label": "R26",
+   "_origin": "ast",
+   "community": 2,
+   "community_name": "Chain 1 \u2014 instrument path",
+   "file_type": "part",
+   "norm_label": "r26",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R27",
+   "label": "R27",
+   "_origin": "ast",
+   "community": 2,
+   "community_name": "Chain 1 \u2014 instrument path",
+   "file_type": "part",
+   "norm_label": "r27",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R28",
+   "label": "R28",
+   "_origin": "ast",
+   "community": 3,
+   "community_name": "Chain 2 \u2014 device FX path",
+   "file_type": "part",
+   "norm_label": "r28",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R29",
+   "label": "R29",
+   "_origin": "ast",
+   "community": 3,
+   "community_name": "Chain 2 \u2014 device FX path",
+   "file_type": "part",
+   "norm_label": "r29",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R30",
+   "label": "R30",
+   "_origin": "ast",
+   "community": 3,
+   "community_name": "Chain 2 \u2014 device FX path",
+   "file_type": "part",
+   "norm_label": "r30",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R31",
+   "label": "R31",
+   "_origin": "ast",
+   "community": 4,
+   "community_name": "Pedal loops",
+   "file_type": "part",
+   "norm_label": "r31",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R32",
+   "label": "R32",
+   "_origin": "ast",
+   "community": 4,
+   "community_name": "Pedal loops",
+   "file_type": "part",
+   "norm_label": "r32",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R33",
+   "label": "R33",
+   "_origin": "ast",
+   "community": 4,
+   "community_name": "Pedal loops",
+   "file_type": "part",
+   "norm_label": "r33",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R34",
+   "label": "R34",
+   "_origin": "ast",
+   "community": 4,
+   "community_name": "Pedal loops",
+   "file_type": "part",
+   "norm_label": "r34",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R35",
+   "label": "R35",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "r35",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R36",
+   "label": "R36",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "r36",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R37",
+   "label": "R37",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "r37",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R38",
+   "label": "R38",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "r38",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R39",
+   "label": "R39",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "r39",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R40",
+   "label": "R40",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "r40",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 1M"
+   }
+  },
+  {
+   "id": "part_R41",
+   "label": "R41",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "r41",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 100R"
+   }
+  },
+  {
+   "id": "part_R42",
+   "label": "R42",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "r42",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 100R"
+   }
+  },
+  {
+   "id": "part_R43",
+   "label": "R43",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "r43",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "resistor \u00b7 100R"
+   }
+  },
+  {
+   "id": "part_C1",
+   "label": "C1",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "c1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 100nF"
+   }
+  },
+  {
+   "id": "part_C2",
+   "label": "C2",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "c2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 100nF"
+   }
+  },
+  {
+   "id": "part_C3",
+   "label": "C3",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "c3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 100nF"
+   }
+  },
+  {
+   "id": "part_C4",
+   "label": "C4",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "c4",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 100nF"
+   }
+  },
+  {
+   "id": "part_C5",
+   "label": "C5",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "c5",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 100nF"
+   }
+  },
+  {
+   "id": "part_C6",
+   "label": "C6",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "part",
+   "norm_label": "c6",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 100nF"
+   }
+  },
+  {
+   "id": "part_C7",
+   "label": "C7",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "part",
+   "norm_label": "c7",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 10uF"
+   }
+  },
+  {
+   "id": "part_C8",
+   "label": "C8",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "c8",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 10uF"
+   }
+  },
+  {
+   "id": "part_C9",
+   "label": "C9",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "c9",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 100nF"
+   }
+  },
+  {
+   "id": "part_C10",
+   "label": "C10",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "c10",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 100nF"
+   }
+  },
+  {
+   "id": "part_C11",
+   "label": "C11",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "c11",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 1uF film"
+   }
+  },
+  {
+   "id": "part_C12",
+   "label": "C12",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "c12",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 1uF film"
+   }
+  },
+  {
+   "id": "part_C13",
+   "label": "C13",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "c13",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 1uF film"
+   }
+  },
+  {
+   "id": "part_C14",
+   "label": "C14",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "c14",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 1uF film"
+   }
+  },
+  {
+   "id": "part_C15",
+   "label": "C15",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "c15",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 1uF film"
+   }
+  },
+  {
+   "id": "part_C16",
+   "label": "C16",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "part",
+   "norm_label": "c16",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 1uF film"
+   }
+  },
+  {
+   "id": "part_C19",
+   "label": "C19",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "part",
+   "norm_label": "c19",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 100uF"
+   }
+  },
+  {
+   "id": "part_C20",
+   "label": "C20",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "part",
+   "norm_label": "c20",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 100nF"
+   }
+  },
+  {
+   "id": "part_C21",
+   "label": "C21",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "part",
+   "norm_label": "c21",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a71\u20132",
+   "metadata": {
+    "description": "capacitor \u00b7 100nF"
+   }
+  },
+  {
+   "id": "net_GND",
+   "label": "GND",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "net",
+   "norm_label": "gnd",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "62 pin connections"
+   }
+  },
+  {
+   "id": "net_9V_PROT",
+   "label": "9V_PROT",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "net",
+   "norm_label": "9v_prot",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "17 pin connections"
+   }
+  },
+  {
+   "id": "net_+5V",
+   "label": "+5V",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "net",
+   "norm_label": "+5v",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "9 pin connections"
+   }
+  },
+  {
+   "id": "net_VBIAS",
+   "label": "VBIAS",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "net",
+   "norm_label": "vbias",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "8 pin connections"
+   }
+  },
+  {
+   "id": "net_PSU_9V_RAW",
+   "label": "PSU_9V_RAW",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "net",
+   "norm_label": "psu_9v_raw",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_RESET",
+   "label": "RESET",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "reset",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "4 pin connections"
+   }
+  },
+  {
+   "id": "net_AREF",
+   "label": "AREF",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "net",
+   "norm_label": "aref",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_IN_TIP",
+   "label": "IN_TIP",
+   "_origin": "ast",
+   "community": 2,
+   "community_name": "Chain 1 \u2014 instrument path",
+   "file_type": "net",
+   "norm_label": "in_tip",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_PFX_MID",
+   "label": "PFX_MID",
+   "_origin": "ast",
+   "community": 2,
+   "community_name": "Chain 1 \u2014 instrument path",
+   "file_type": "net",
+   "norm_label": "pfx_mid",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_OUT3_IN",
+   "label": "OUT3_IN",
+   "_origin": "ast",
+   "community": 2,
+   "community_name": "Chain 1 \u2014 instrument path",
+   "file_type": "net",
+   "norm_label": "out3_in",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_TO1_TIP",
+   "label": "TO1_TIP",
+   "_origin": "ast",
+   "community": 2,
+   "community_name": "Chain 1 \u2014 instrument path",
+   "file_type": "net",
+   "norm_label": "to1_tip",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_FXR1_TIP",
+   "label": "FXR1_TIP",
+   "_origin": "ast",
+   "community": 3,
+   "community_name": "Chain 2 \u2014 device FX path",
+   "file_type": "net",
+   "norm_label": "fxr1_tip",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_FXS1_TIP",
+   "label": "FXS1_TIP",
+   "_origin": "ast",
+   "community": 3,
+   "community_name": "Chain 2 \u2014 device FX path",
+   "file_type": "net",
+   "norm_label": "fxs1_tip",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_PRETO_MID",
+   "label": "PRETO_MID",
+   "_origin": "ast",
+   "community": 3,
+   "community_name": "Chain 2 \u2014 device FX path",
+   "file_type": "net",
+   "norm_label": "preto_mid",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_LA_SEND",
+   "label": "LA_SEND",
+   "_origin": "ast",
+   "community": 4,
+   "community_name": "Pedal loops",
+   "file_type": "net",
+   "norm_label": "la_send",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "4 pin connections"
+   }
+  },
+  {
+   "id": "net_LB_SEND",
+   "label": "LB_SEND",
+   "_origin": "ast",
+   "community": 4,
+   "community_name": "Pedal loops",
+   "file_type": "net",
+   "norm_label": "lb_send",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "4 pin connections"
+   }
+  },
+  {
+   "id": "net_LA_RET",
+   "label": "LA_RET",
+   "_origin": "ast",
+   "community": 4,
+   "community_name": "Pedal loops",
+   "file_type": "net",
+   "norm_label": "la_ret",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_LB_RET",
+   "label": "LB_RET",
+   "_origin": "ast",
+   "community": 4,
+   "community_name": "Pedal loops",
+   "file_type": "net",
+   "norm_label": "lb_ret",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_LINK_K1",
+   "label": "LINK_K1",
+   "_origin": "ast",
+   "community": 2,
+   "community_name": "Chain 1 \u2014 instrument path",
+   "file_type": "net",
+   "norm_label": "link_k1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LINK_K2",
+   "label": "LINK_K2",
+   "_origin": "ast",
+   "community": 2,
+   "community_name": "Chain 1 \u2014 instrument path",
+   "file_type": "net",
+   "norm_label": "link_k2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LINK_K3",
+   "label": "LINK_K3",
+   "_origin": "ast",
+   "community": 3,
+   "community_name": "Chain 2 \u2014 device FX path",
+   "file_type": "net",
+   "norm_label": "link_k3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LINK_K4",
+   "label": "LINK_K4",
+   "_origin": "ast",
+   "community": 3,
+   "community_name": "Chain 2 \u2014 device FX path",
+   "file_type": "net",
+   "norm_label": "link_k4",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LINK_K5",
+   "label": "LINK_K5",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "net",
+   "norm_label": "link_k5",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_BUF1_IN",
+   "label": "BUF1_IN",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "net",
+   "norm_label": "buf1_in",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_BUF2_IN",
+   "label": "BUF2_IN",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "net",
+   "norm_label": "buf2_in",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_BUF3_IN",
+   "label": "BUF3_IN",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "net",
+   "norm_label": "buf3_in",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_BUF1_O",
+   "label": "BUF1_O",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "net",
+   "norm_label": "buf1_o",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_BUF2_O",
+   "label": "BUF2_O",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "net",
+   "norm_label": "buf2_o",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_BUF3_O",
+   "label": "BUF3_O",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "net",
+   "norm_label": "buf3_o",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_BUF1_RC",
+   "label": "BUF1_RC",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "net",
+   "norm_label": "buf1_rc",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_BUF2_RC",
+   "label": "BUF2_RC",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "net",
+   "norm_label": "buf2_rc",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_BUF3_RC",
+   "label": "BUF3_RC",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "net",
+   "norm_label": "buf3_rc",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_BUF1_OUT",
+   "label": "BUF1_OUT",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "net",
+   "norm_label": "buf1_out",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "4 pin connections"
+   }
+  },
+  {
+   "id": "net_BUF2_OUT",
+   "label": "BUF2_OUT",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "net",
+   "norm_label": "buf2_out",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "4 pin connections"
+   }
+  },
+  {
+   "id": "net_BUF3_OUT",
+   "label": "BUF3_OUT",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "net",
+   "norm_label": "buf3_out",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_BUF3_SRC",
+   "label": "BUF3_SRC",
+   "_origin": "ast",
+   "community": 5,
+   "community_name": "Buffers & output bypass",
+   "file_type": "net",
+   "norm_label": "buf3_src",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_K1_COIL_LO",
+   "label": "K1_COIL_LO",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "net",
+   "norm_label": "k1_coil_lo",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_K2_COIL_LO",
+   "label": "K2_COIL_LO",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "net",
+   "norm_label": "k2_coil_lo",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_K3_COIL_LO",
+   "label": "K3_COIL_LO",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "net",
+   "norm_label": "k3_coil_lo",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_K4_COIL_LO",
+   "label": "K4_COIL_LO",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "net",
+   "norm_label": "k4_coil_lo",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_K5_COIL_LO",
+   "label": "K5_COIL_LO",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "net",
+   "norm_label": "k5_coil_lo",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_K1_BASE",
+   "label": "K1_BASE",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "net",
+   "norm_label": "k1_base",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_K2_BASE",
+   "label": "K2_BASE",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "net",
+   "norm_label": "k2_base",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_K3_BASE",
+   "label": "K3_BASE",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "net",
+   "norm_label": "k3_base",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_K4_BASE",
+   "label": "K4_BASE",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "net",
+   "norm_label": "k4_base",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_K5_BASE",
+   "label": "K5_BASE",
+   "_origin": "ast",
+   "community": 7,
+   "community_name": "Relay drivers",
+   "file_type": "net",
+   "norm_label": "k5_base",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_DRV_K1",
+   "label": "DRV_K1",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "drv_k1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_DRV_K2",
+   "label": "DRV_K2",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "drv_k2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_DRV_K3",
+   "label": "DRV_K3",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "drv_k3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_DRV_K4",
+   "label": "DRV_K4",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "drv_k4",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_DRV_K5",
+   "label": "DRV_K5",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "drv_k5",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_SW1_N",
+   "label": "SW1_N",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "sw1_n",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_SW1_MCU",
+   "label": "SW1_MCU",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "sw1_mcu",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_SW2_N",
+   "label": "SW2_N",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "sw2_n",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_SW2_MCU",
+   "label": "SW2_MCU",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "sw2_mcu",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_LED1_D",
+   "label": "LED1_D",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "led1_d",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LED1_A",
+   "label": "LED1_A",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "net",
+   "norm_label": "led1_a",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LED2_D",
+   "label": "LED2_D",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "led2_d",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LED2_A",
+   "label": "LED2_A",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "net",
+   "norm_label": "led2_a",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LED3_D",
+   "label": "LED3_D",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "led3_d",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_LED3_A",
+   "label": "LED3_A",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "net",
+   "norm_label": "led3_a",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LED4_D",
+   "label": "LED4_D",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "led4_d",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_LED4_A",
+   "label": "LED4_A",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "net",
+   "norm_label": "led4_a",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LED5_D",
+   "label": "LED5_D",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "led5_d",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "3 pin connections"
+   }
+  },
+  {
+   "id": "net_LED5_A",
+   "label": "LED5_A",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "net",
+   "norm_label": "led5_a",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LED6_D",
+   "label": "LED6_D",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "led6_d",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LED6_A",
+   "label": "LED6_A",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "net",
+   "norm_label": "led6_a",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LED7_D",
+   "label": "LED7_D",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "led7_d",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LED7_A",
+   "label": "LED7_A",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "net",
+   "norm_label": "led7_a",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LED8_D",
+   "label": "LED8_D",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "led8_d",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_LED8_A",
+   "label": "LED8_A",
+   "_origin": "ast",
+   "community": 8,
+   "community_name": "Indicators",
+   "file_type": "net",
+   "norm_label": "led8_a",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_SELFTEST",
+   "label": "SELFTEST",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "selftest",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "net_SPARE_FB",
+   "label": "SPARE_FB",
+   "_origin": "ast",
+   "community": 6,
+   "community_name": "MCU control",
+   "file_type": "net",
+   "norm_label": "spare_fb",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "metadata": {
+    "description": "2 pin connections"
+   }
+  },
+  {
+   "id": "kn_passive_front",
+   "label": "Passive front end",
+   "_origin": "ast",
+   "community": 10,
+   "community_name": "Signal architecture",
+   "file_type": "concept",
+   "norm_label": "passive front end",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Audio is passive from the instrument jack to the first loop return; buffered thereafter"
+   }
+  },
+  {
+   "id": "kn_fuzz_rule",
+   "label": "Fuzz rule",
+   "_origin": "ast",
+   "community": 10,
+   "community_name": "Signal architecture",
+   "file_type": "concept",
+   "norm_label": "fuzz rule",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Nothing upstream of a loop return is ever buffered; fuzz lives first in Loop A"
+   }
+  },
+  {
+   "id": "kn_buffer_map",
+   "label": "Three-buffer map",
+   "_origin": "ast",
+   "community": 10,
+   "community_name": "Signal architecture",
+   "file_type": "concept",
+   "norm_label": "three-buffer map",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Fixed at three unity buffers regardless of lane count"
+   }
+  },
+  {
+   "id": "kn_buf_a",
+   "label": "Loop A return buffer",
+   "_origin": "ast",
+   "community": 10,
+   "community_name": "Signal architecture",
+   "file_type": "concept",
+   "norm_label": "loop a return buffer",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Drives the A\u2192B hop and downstream when A is active"
+   }
+  },
+  {
+   "id": "kn_buf_b",
+   "label": "Loop B return buffer",
+   "_origin": "ast",
+   "community": 10,
+   "community_name": "Signal architecture",
+   "file_type": "concept",
+   "norm_label": "loop b return buffer",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Drives the chain output whenever B is last"
+   }
+  },
+  {
+   "id": "kn_buf_out",
+   "label": "Output buffer before lane selector",
+   "_origin": "ast",
+   "community": 10,
+   "community_name": "Signal architecture",
+   "file_type": "concept",
+   "norm_label": "output buffer before lane selector",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Covers the all-loops-off state; one stage feeds every TO port"
+   }
+  },
+  {
+   "id": "kn_fxs_passive",
+   "label": "FX Send passive by design",
+   "_origin": "ast",
+   "community": 10,
+   "community_name": "Signal architecture",
+   "file_type": "concept",
+   "norm_label": "fx send passive by design",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "FX chain source is always low-Z (device FX send or return buffer); a buffer there is redundant"
+   }
+  },
+  {
+   "id": "kn_vbias",
+   "label": "VBIAS mid-rail reference",
+   "_origin": "ast",
+   "community": 10,
+   "community_name": "Signal architecture",
+   "file_type": "concept",
+   "norm_label": "vbias mid-rail reference",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Shared divider biasing all buffers on a single 9 V rail"
+   }
+  },
+  {
+   "id": "kn_follower",
+   "label": "Unity-gain follower",
+   "_origin": "ast",
+   "community": 10,
+   "community_name": "Signal architecture",
+   "file_type": "concept",
+   "norm_label": "unity-gain follower",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Non-inverting buffer topology, 1 M\u03a9 input bias"
+   }
+  },
+  {
+   "id": "kn_popfree",
+   "label": "Pop-free switching",
+   "_origin": "ast",
+   "community": 10,
+   "community_name": "Signal architecture",
+   "file_type": "concept",
+   "norm_label": "pop-free switching",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "1 M\u03a9 bleeds on every switched node; AC coupling at buffer boundaries"
+   }
+  },
+  {
+   "id": "kn_headroom",
+   "label": "9 V rail headroom",
+   "_origin": "ast",
+   "community": 10,
+   "community_name": "Signal architecture",
+   "file_type": "concept",
+   "norm_label": "9 v rail headroom",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "LMC660-class CMOS output swing; TL074 only with caveat; 5.5 V-max parts excluded"
+   }
+  },
+  {
+   "id": "kn_ac_coupling",
+   "label": "AC-coupling discipline",
+   "_origin": "ast",
+   "community": 10,
+   "community_name": "Signal architecture",
+   "file_type": "concept",
+   "norm_label": "ac-coupling discipline",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "1 \u00b5F film in/out of every buffer keeps DC off relay contacts"
+   }
+  },
+  {
+   "id": "kn_four_state",
+   "label": "Four-state cycle",
+   "_origin": "ast",
+   "community": 11,
+   "community_name": "Routing & states",
+   "file_type": "concept",
+   "norm_label": "four-state cycle",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Each position cycles Off \u2192 A \u2192 B \u2192 A\u2192B \u2192 Off independently"
+   }
+  },
+  {
+   "id": "kn_prefx_priority",
+   "label": "Pre-FX priority allocation",
+   "_origin": "ast",
+   "community": 11,
+   "community_name": "Routing & states",
+   "file_type": "concept",
+   "norm_label": "pre-fx priority allocation",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Applied Pre-TO = requested minus loops held by Pre-FX (A2P = Y1 and not X1)"
+   }
+  },
+  {
+   "id": "kn_shared_loop_conflict",
+   "label": "Shared-loop conflict",
+   "_origin": "ast",
+   "community": 11,
+   "community_name": "Routing & states",
+   "file_type": "concept",
+   "norm_label": "shared-loop conflict",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "One physical send/return pair per loop; a loop cannot sit at both positions at once"
+   }
+  },
+  {
+   "id": "kn_applied_leds",
+   "label": "Applied-state indication",
+   "_origin": "ast",
+   "community": 11,
+   "community_name": "Routing & states",
+   "file_type": "concept",
+   "norm_label": "applied-state indication",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "LEDs show applied routing; Pre-TO may display Off while its request is overridden"
+   }
+  },
+  {
+   "id": "kn_ab_order",
+   "label": "A-before-B series order",
+   "_origin": "ast",
+   "community": 11,
+   "community_name": "Routing & states",
+   "file_type": "concept",
+   "norm_label": "a-before-b series order",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Loop A always precedes Loop B in series \u2014 wired contact order, not logic"
+   }
+  },
+  {
+   "id": "kn_bbm",
+   "label": "Break-before-make",
+   "_origin": "ast",
+   "community": 11,
+   "community_name": "Routing & states",
+   "file_type": "concept",
+   "norm_label": "break-before-make",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Lane changes never bridge two paths; inherent to relay switching"
+   }
+  },
+  {
+   "id": "kn_tip_isolation",
+   "label": "Unselected tip isolation",
+   "_origin": "ast",
+   "community": 11,
+   "community_name": "Routing & states",
+   "file_type": "concept",
+   "norm_label": "unselected tip isolation",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Unselected lane tips float; only the selected lane connects"
+   }
+  },
+  {
+   "id": "kn_truth_table",
+   "label": "16-state truth table",
+   "_origin": "ast",
+   "community": 11,
+   "community_name": "Routing & states",
+   "file_type": "concept",
+   "norm_label": "16-state truth table",
+   "source_file": "docs/single-lane-circuit.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Complete state \u00d7 relay \u00d7 LED acceptance reference"
+   }
+  },
+  {
+   "id": "kn_insert_stage",
+   "label": "Loop insert stage pattern",
+   "_origin": "ast",
+   "community": 11,
+   "community_name": "Routing & states",
+   "file_type": "concept",
+   "norm_label": "loop insert stage pattern",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "DPDT per loop-at-position: COM in, NO to loop/buffer, NC bridge = bypass"
+   }
+  },
+  {
+   "id": "kn_loop_sharing",
+   "label": "Loop sharing across chains",
+   "_origin": "ast",
+   "community": 11,
+   "community_name": "Routing & states",
+   "file_type": "concept",
+   "norm_label": "loop sharing across chains",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Both relays of a loop tie NO contacts to the same jacks; interlock prevents double drive"
+   }
+  },
+  {
+   "id": "kn_failsafe",
+   "label": "Fail-safe hardwire pass-through",
+   "_origin": "ast",
+   "community": 12,
+   "community_name": "Fail-safety",
+   "file_type": "concept",
+   "norm_label": "fail-safe hardwire pass-through",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Power loss or firmware fault \u2192 passive straight-through, loops bypassed, other lanes isolated"
+   }
+  },
+  {
+   "id": "kn_k5_bypass",
+   "label": "Buffer-bypass relay K5",
+   "_origin": "ast",
+   "community": 12,
+   "community_name": "Fail-safety",
+   "file_type": "concept",
+   "norm_label": "buffer-bypass relay k5",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Output buffer relay-bypassed; de-energized = hardwire \u2014 keeps fail-safe honest with an active output"
+   }
+  },
+  {
+   "id": "kn_pulldown_boot",
+   "label": "Base-pulldown boot safety",
+   "_origin": "ast",
+   "community": 12,
+   "community_name": "Fail-safety",
+   "file_type": "concept",
+   "norm_label": "base-pulldown boot safety",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "100 k\u03a9 base pull-downs hold every coil off while MCU pins float at boot/ISP"
+   }
+  },
+  {
+   "id": "kn_watchdog",
+   "label": "Watchdog",
+   "_origin": "ast",
+   "community": 12,
+   "community_name": "Fail-safety",
+   "file_type": "concept",
+   "norm_label": "watchdog",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Firmware hang \u2192 reset \u2192 boot state \u2192 hardwire; no relay held mid-state"
+   }
+  },
+  {
+   "id": "kn_nc_convention",
+   "label": "NC = bypass convention",
+   "_origin": "ast",
+   "community": 12,
+   "community_name": "Fail-safety",
+   "file_type": "concept",
+   "norm_label": "nc = bypass convention",
+   "source_file": "docs/single-lane-circuit.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Relay de-energized state is always the bypass/straight path"
+   }
+  },
+  {
+   "id": "kn_loops_drop_buffers",
+   "label": "Loops drop their buffers",
+   "_origin": "ast",
+   "community": 12,
+   "community_name": "Fail-safety",
+   "file_type": "concept",
+   "norm_label": "loops drop their buffers",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "On power loss the loop relays remove the loops and their return buffers from circuit"
+   }
+  },
+  {
+   "id": "kn_mcu_control",
+   "label": "MCU control platform",
+   "_origin": "ast",
+   "community": 13,
+   "community_name": "Control & firmware",
+   "file_type": "concept",
+   "norm_label": "mcu control platform",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Microcontroller replaces Revision A CMOS: debounce, states, allocation, drivers"
+   }
+  },
+  {
+   "id": "kn_debounce",
+   "label": "Software debounce (25 ms)",
+   "_origin": "ast",
+   "community": 13,
+   "community_name": "Control & firmware",
+   "file_type": "concept",
+   "norm_label": "software debounce (25 ms)",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "One clean event per press; contact quality noncritical"
+   }
+  },
+  {
+   "id": "kn_alloc_first",
+   "label": "Allocation before outputs",
+   "_origin": "ast",
+   "community": 13,
+   "community_name": "Control & firmware",
+   "file_type": "concept",
+   "norm_label": "allocation before outputs",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Applied state computed before any relay/LED write \u2014 interlock cannot glitch"
+   }
+  },
+  {
+   "id": "kn_selftest",
+   "label": "Self-test truth-table walk",
+   "_origin": "ast",
+   "community": 13,
+   "community_name": "Control & firmware",
+   "file_type": "concept",
+   "norm_label": "self-test truth-table walk",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Strap at boot walks all 16 states \u2014 QC mode for made-to-order units"
+   }
+  },
+  {
+   "id": "kn_isp_leds",
+   "label": "ISP with shared LED pins",
+   "_origin": "ast",
+   "community": 13,
+   "community_name": "Control & firmware",
+   "file_type": "concept",
+   "norm_label": "isp with shared led pins",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Three LEDs share MOSI/MISO/SCK; LED loads are programmer-safe"
+   }
+  },
+  {
+   "id": "kn_midi_roadmap",
+   "label": "MIDI/presets roadmap",
+   "_origin": "ast",
+   "community": 13,
+   "community_name": "Control & firmware",
+   "file_type": "concept",
+   "norm_label": "midi/presets roadmap",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Spare UART/I\u00b2C reserved; must never compromise fail-safe requirements"
+   }
+  },
+  {
+   "id": "kn_tuner_spare",
+   "label": "Spare op-amp (tuner-out)",
+   "_origin": "ast",
+   "community": 13,
+   "community_name": "Control & firmware",
+   "file_type": "concept",
+   "norm_label": "spare op-amp (tuner-out)",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Fourth amplifier parked as follower; future always-on tuner feed"
+   }
+  },
+  {
+   "id": "kn_lane_param",
+   "label": "Lane count as build parameter",
+   "_origin": "ast",
+   "community": 13,
+   "community_name": "Control & firmware",
+   "file_type": "concept",
+   "norm_label": "lane count as build parameter",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Firmware and buffers lane-agnostic; lanes add relays and jacks only"
+   }
+  },
+  {
+   "id": "kn_made_to_order",
+   "label": "Made-to-order model",
+   "_origin": "ast",
+   "community": 14,
+   "community_name": "Product & formats",
+   "file_type": "concept",
+   "norm_label": "made-to-order model",
+   "source_file": "docs/multi-lane-prototype.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Units built to order; capped runs; per-order config and self-test"
+   }
+  },
+  {
+   "id": "kn_custom_lanes",
+   "label": "Custom lane counts (to 8)",
+   "_origin": "ast",
+   "community": 14,
+   "community_name": "Product & formats",
+   "file_type": "concept",
+   "norm_label": "custom lane counts (to 8)",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "1\u20134 standard; studios can order specific counts up to 8 in rack format"
+   }
+  },
+  {
+   "id": "kn_stompbox",
+   "label": "Stompbox format",
+   "_origin": "ast",
+   "community": 14,
+   "community_name": "Product & formats",
+   "file_type": "concept",
+   "norm_label": "stompbox format",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "1590-class floor unit, 9 V pedal supply, suits 1\u20134 lanes"
+   }
+  },
+  {
+   "id": "kn_rack",
+   "label": "1U rack format",
+   "_origin": "ast",
+   "community": 14,
+   "community_name": "Product & formats",
+   "file_type": "concept",
+   "norm_label": "1u rack format",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Internal linear supply, \u00b115 V audio rails, 2\u20138 lanes"
+   }
+  },
+  {
+   "id": "kn_remote_sw",
+   "label": "Remote 2-pin footswitches",
+   "_origin": "ast",
+   "community": 14,
+   "community_name": "Product & formats",
+   "file_type": "concept",
+   "norm_label": "remote 2-pin footswitches",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Momentary NO on TS jacks: tip = switch node, sleeve = ground; no proprietary connectors"
+   }
+  },
+  {
+   "id": "kn_unplug_safe",
+   "label": "Unplug-safe inputs",
+   "_origin": "ast",
+   "community": 14,
+   "community_name": "Product & formats",
+   "file_type": "concept",
+   "norm_label": "unplug-safe inputs",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Empty jack reads pull-up = released; a missing switch can never read as stuck"
+   }
+  },
+  {
+   "id": "kn_patch_panel",
+   "label": "Optional patch panel",
+   "_origin": "ast",
+   "community": 14,
+   "community_name": "Product & formats",
+   "file_type": "concept",
+   "norm_label": "optional patch panel",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Front normalled jacks for IN, loops, and footswitch inputs \u2014 never a parallel Y"
+   }
+  },
+  {
+   "id": "kn_rev_a",
+   "label": "Revision A CMOS (archived)",
+   "_origin": "ast",
+   "community": 15,
+   "community_name": "Design history",
+   "file_type": "concept",
+   "norm_label": "revision a cmos (archived)",
+   "source_file": "docs/single-lane-circuit.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Netlist-verified passive/no-firmware predecessor; truth-table and contact-matrix source"
+   }
+  },
+  {
+   "id": "kn_rev_a_sch",
+   "label": "Verified Rev A schematic",
+   "_origin": "ast",
+   "community": 15,
+   "community_name": "Design history",
+   "file_type": "concept",
+   "norm_label": "verified rev a schematic",
+   "source_file": "docs/single-lane-circuit.md",
+   "source_location": "",
+   "metadata": {
+    "description": "SingleLane.kicad_sch: netlist diffed pin-for-pin, ERC zero violations"
+   }
+  },
+  {
+   "id": "kn_bench_proto",
+   "label": "Bench prototype lineage",
+   "_origin": "ast",
+   "community": 15,
+   "community_name": "Design history",
+   "file_type": "concept",
+   "norm_label": "bench prototype lineage",
+   "source_file": "docs/single-loop-prototype.md",
+   "source_location": "",
+   "metadata": {
+    "description": "One-loop buffered prototype that established debounce/driver pattern"
+   }
+  },
+  {
+   "id": "kn_netlist_diff",
+   "label": "Netlist-diff verification",
+   "_origin": "ast",
+   "community": 16,
+   "community_name": "Verification",
+   "file_type": "concept",
+   "norm_label": "netlist-diff verification",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Exported KiCad netlist diffed pin-by-pin against expected pin\u2192net tables"
+   }
+  },
+  {
+   "id": "kn_erc_zero",
+   "label": "ERC-to-zero discipline",
+   "_origin": "ast",
+   "community": 16,
+   "community_name": "Verification",
+   "file_type": "concept",
+   "norm_label": "erc-to-zero discipline",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Schematic accepted only with zero ERC violations"
+   }
+  },
+  {
+   "id": "kn_staged_bringup",
+   "label": "Staged bench bring-up",
+   "_origin": "ast",
+   "community": 16,
+   "community_name": "Verification",
+   "file_type": "concept",
+   "norm_label": "staged bench bring-up",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Continuity \u2192 rails \u2192 buffers \u2192 MCU walk; audio last"
+   }
+  },
+  {
+   "id": "kn_build_gate",
+   "label": "Build-gate checks",
+   "_origin": "ast",
+   "community": 16,
+   "community_name": "Verification",
+   "file_type": "concept",
+   "norm_label": "build-gate checks",
+   "source_file": "docs/build-guide.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Unpowered continuity, state walk, interlock rows, power-loss test before gear connects"
+   }
+  },
+  {
+   "id": "kn_power_budget",
+   "label": "Power budget \u2248 70 mA",
+   "_origin": "ast",
+   "community": 16,
+   "community_name": "Verification",
+   "file_type": "concept",
+   "norm_label": "power budget \u2248 70 ma",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Worst case 3 coils + LEDs + logic + op-amp on a \u2265100 mA isolated supply"
+   }
+  },
+  {
+   "id": "kn_coil_max",
+   "label": "Max 3 simultaneous coils",
+   "_origin": "ast",
+   "community": 16,
+   "community_name": "Verification",
+   "file_type": "concept",
+   "norm_label": "max 3 simultaneous coils",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Interlock caps active loops at 2; + K5 = 3 energized coils worst case"
+   }
+  },
+  {
+   "id": "kn_center_neg",
+   "label": "9 V center-negative input",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "concept",
+   "norm_label": "9 v center-negative input",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Standard pedal supply convention; center = GND, sleeve = +9 V raw"
+   }
+  },
+  {
+   "id": "kn_protected_rail",
+   "label": "9V_PROT + reverse protection",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "concept",
+   "norm_label": "9v_prot + reverse protection",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "1N5817 series protection feeding coils and op-amp"
+   }
+  },
+  {
+   "id": "kn_logic_rail",
+   "label": "5 V logic rail",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "concept",
+   "norm_label": "5 v logic rail",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "metadata": {
+    "description": "78L05 from 9V_PROT for MCU and LEDs"
+   }
+  },
+  {
+   "id": "kn_rack_rails",
+   "label": "\u00b115 V rack audio rails",
+   "_origin": "ast",
+   "community": 1,
+   "community_name": "Power",
+   "file_type": "concept",
+   "norm_label": "\u00b115 v rack audio rails",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "metadata": {
+    "description": "Rack format runs bipolar linear supply; headroom non-issue"
+   }
+  }
+ ],
+ "links": [
+  {
+   "source": "part_U1",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.8",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U2",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U2.11",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U3",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U3.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_SW1",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "SW1.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_SW2",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "SW2.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J9",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J9.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J10",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J10.6",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J11",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J11.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J1",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J1.S",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J2",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J2.S",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J3",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J3.S",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J4",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J4.S",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J5",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J5.S",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J6",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J6.S",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J7",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J7.S",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J8",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J8.S",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_Q1",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Q1.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_Q2",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Q2.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_Q3",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Q3.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_Q4",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Q4.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_Q5",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Q5.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED1",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED1.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED2",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED2.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED3",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED3.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED4",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED4.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED5",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED5.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED6",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED6.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED7",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED7.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED8",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED8.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R14",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R14.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R15",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R15.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R16",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R16.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R17",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R17.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R18",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R18.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R20",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R20.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R24",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R24.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R25",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R25.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R26",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R26.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R27",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R27.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R28",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R28.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R29",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R29.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R30",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R30.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R31",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R31.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R32",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R32.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R33",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R33.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R34",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R34.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R35",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R35.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R36",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R36.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R37",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R37.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C1",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C1.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C2",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C2.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C3",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C3.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C4",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C4.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C5",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C5.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C6",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C6.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C7",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C7.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C9",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C9.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C10",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C10.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C19",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C19.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C20",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C20.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C21",
+   "target": "net_GND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C21.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_D6",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "D6.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R19",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R19.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U2",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U2.4",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U3",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U3.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C10",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C10.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C19",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C19.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C20",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C20.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K1",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K1.A2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K2",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K2.A2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K3",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K3.A2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K4",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K4.A2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K5",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K5.A2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_D1",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "D1.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_D2",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "D2.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_D3",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "D3.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_D4",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "D4.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_D5",
+   "target": "net_9V_PROT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "D5.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_+5V",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.7",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U3",
+   "target": "net_+5V",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U3.3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R23",
+   "target": "net_+5V",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R23.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J10",
+   "target": "net_+5V",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J10.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C4",
+   "target": "net_+5V",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C4.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C5",
+   "target": "net_+5V",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C5.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C7",
+   "target": "net_+5V",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C7.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C21",
+   "target": "net_+5V",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C21.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R19",
+   "target": "net_VBIAS",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R19.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R20",
+   "target": "net_VBIAS",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R20.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C8",
+   "target": "net_VBIAS",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C8.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C9",
+   "target": "net_VBIAS",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C9.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R38",
+   "target": "net_VBIAS",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R38.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R39",
+   "target": "net_VBIAS",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R39.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R40",
+   "target": "net_VBIAS",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R40.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U2",
+   "target": "net_VBIAS",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U2.12",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J9",
+   "target": "net_PSU_9V_RAW",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J9.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_D6",
+   "target": "net_PSU_9V_RAW",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "D6.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_RESET",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R23",
+   "target": "net_RESET",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R23.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C3",
+   "target": "net_RESET",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C3.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J10",
+   "target": "net_RESET",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J10.5",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_AREF",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.21",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C6",
+   "target": "net_AREF",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C6.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J1",
+   "target": "net_IN_TIP",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J1.T",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K1",
+   "target": "net_IN_TIP",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K1.11",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R24",
+   "target": "net_IN_TIP",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R24.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K1",
+   "target": "net_PFX_MID",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K1.21",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K2",
+   "target": "net_PFX_MID",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K2.11",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R25",
+   "target": "net_PFX_MID",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R25.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K2",
+   "target": "net_OUT3_IN",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K2.21",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K5",
+   "target": "net_OUT3_IN",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K5.11",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R26",
+   "target": "net_OUT3_IN",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R26.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K5",
+   "target": "net_TO1_TIP",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K5.21",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J2",
+   "target": "net_TO1_TIP",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J2.T",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R27",
+   "target": "net_TO1_TIP",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R27.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J4",
+   "target": "net_FXR1_TIP",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J4.T",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K3",
+   "target": "net_FXR1_TIP",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K3.11",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R28",
+   "target": "net_FXR1_TIP",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R28.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K4",
+   "target": "net_FXS1_TIP",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K4.21",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J3",
+   "target": "net_FXS1_TIP",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J3.T",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R29",
+   "target": "net_FXS1_TIP",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R29.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K3",
+   "target": "net_PRETO_MID",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K3.21",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K4",
+   "target": "net_PRETO_MID",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K4.11",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R30",
+   "target": "net_PRETO_MID",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R30.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K1",
+   "target": "net_LA_SEND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K1.14",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K3",
+   "target": "net_LA_SEND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K3.14",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J5",
+   "target": "net_LA_SEND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J5.T",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R31",
+   "target": "net_LA_SEND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R31.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K2",
+   "target": "net_LB_SEND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K2.14",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K4",
+   "target": "net_LB_SEND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K4.14",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J7",
+   "target": "net_LB_SEND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J7.T",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R32",
+   "target": "net_LB_SEND",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R32.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J6",
+   "target": "net_LA_RET",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J6.T",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R33",
+   "target": "net_LA_RET",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R33.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C11",
+   "target": "net_LA_RET",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C11.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J8",
+   "target": "net_LB_RET",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J8.T",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R34",
+   "target": "net_LB_RET",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R34.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C12",
+   "target": "net_LB_RET",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C12.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K1",
+   "target": "net_LINK_K1",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K1.12",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K2",
+   "target": "net_LINK_K2",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K2.12",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K3",
+   "target": "net_LINK_K3",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K3.12",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K4",
+   "target": "net_LINK_K4",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K4.12",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K5",
+   "target": "net_LINK_K5",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K5.12",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C11",
+   "target": "net_BUF1_IN",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C11.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R38",
+   "target": "net_BUF1_IN",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R38.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U2",
+   "target": "net_BUF1_IN",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U2.3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C12",
+   "target": "net_BUF2_IN",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C12.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R39",
+   "target": "net_BUF2_IN",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R39.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U2",
+   "target": "net_BUF2_IN",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U2.5",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C13",
+   "target": "net_BUF3_IN",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C13.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R40",
+   "target": "net_BUF3_IN",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R40.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U2",
+   "target": "net_BUF3_IN",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U2.10",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U2",
+   "target": "net_BUF1_O",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U2.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R41",
+   "target": "net_BUF1_O",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R41.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U2",
+   "target": "net_BUF2_O",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U2.6",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R42",
+   "target": "net_BUF2_O",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R42.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U2",
+   "target": "net_BUF3_O",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U2.8",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R43",
+   "target": "net_BUF3_O",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R43.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R41",
+   "target": "net_BUF1_RC",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R41.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C14",
+   "target": "net_BUF1_RC",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C14.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R42",
+   "target": "net_BUF2_RC",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R42.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C15",
+   "target": "net_BUF2_RC",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C15.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R43",
+   "target": "net_BUF3_RC",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R43.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C16",
+   "target": "net_BUF3_RC",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C16.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C14",
+   "target": "net_BUF1_OUT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C14.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R35",
+   "target": "net_BUF1_OUT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R35.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K1",
+   "target": "net_BUF1_OUT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K1.24",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K3",
+   "target": "net_BUF1_OUT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K3.24",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C15",
+   "target": "net_BUF2_OUT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C15.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R36",
+   "target": "net_BUF2_OUT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R36.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K2",
+   "target": "net_BUF2_OUT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K2.24",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K4",
+   "target": "net_BUF2_OUT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K4.24",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C16",
+   "target": "net_BUF3_OUT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C16.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R37",
+   "target": "net_BUF3_OUT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R37.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K5",
+   "target": "net_BUF3_OUT",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K5.24",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K5",
+   "target": "net_BUF3_SRC",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K5.14",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C13",
+   "target": "net_BUF3_SRC",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C13.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K1",
+   "target": "net_K1_COIL_LO",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K1.A1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_Q1",
+   "target": "net_K1_COIL_LO",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Q1.3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_D1",
+   "target": "net_K1_COIL_LO",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "D1.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K2",
+   "target": "net_K2_COIL_LO",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K2.A1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_Q2",
+   "target": "net_K2_COIL_LO",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Q2.3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_D2",
+   "target": "net_K2_COIL_LO",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "D2.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K3",
+   "target": "net_K3_COIL_LO",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K3.A1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_Q3",
+   "target": "net_K3_COIL_LO",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Q3.3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_D3",
+   "target": "net_K3_COIL_LO",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "D3.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K4",
+   "target": "net_K4_COIL_LO",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K4.A1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_Q4",
+   "target": "net_K4_COIL_LO",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Q4.3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_D4",
+   "target": "net_K4_COIL_LO",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "D4.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_K5",
+   "target": "net_K5_COIL_LO",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K5.A1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_Q5",
+   "target": "net_K5_COIL_LO",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Q5.3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_D5",
+   "target": "net_K5_COIL_LO",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "D5.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R9",
+   "target": "net_K1_BASE",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R9.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R14",
+   "target": "net_K1_BASE",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R14.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_Q1",
+   "target": "net_K1_BASE",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Q1.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R10",
+   "target": "net_K2_BASE",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R10.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R15",
+   "target": "net_K2_BASE",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R15.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_Q2",
+   "target": "net_K2_BASE",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Q2.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R11",
+   "target": "net_K3_BASE",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R11.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R16",
+   "target": "net_K3_BASE",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R16.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_Q3",
+   "target": "net_K3_BASE",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Q3.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R12",
+   "target": "net_K4_BASE",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R12.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R17",
+   "target": "net_K4_BASE",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R17.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_Q4",
+   "target": "net_K4_BASE",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Q4.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R13",
+   "target": "net_K5_BASE",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R13.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R18",
+   "target": "net_K5_BASE",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R18.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_Q5",
+   "target": "net_K5_BASE",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Q5.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_DRV_K1",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.6",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R9",
+   "target": "net_DRV_K1",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R9.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_DRV_K2",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.11",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R10",
+   "target": "net_DRV_K2",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R10.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_DRV_K3",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.12",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R11",
+   "target": "net_DRV_K3",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R11.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_DRV_K4",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.13",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R12",
+   "target": "net_DRV_K4",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R12.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_DRV_K5",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.14",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R13",
+   "target": "net_DRV_K5",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R13.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_SW1",
+   "target": "net_SW1_N",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "SW1.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R21",
+   "target": "net_SW1_N",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R21.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_SW1_MCU",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.4",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R21",
+   "target": "net_SW1_MCU",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R21.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C1",
+   "target": "net_SW1_MCU",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C1.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_SW2",
+   "target": "net_SW2_N",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "SW2.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R22",
+   "target": "net_SW2_N",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R22.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_SW2_MCU",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.5",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R22",
+   "target": "net_SW2_MCU",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R22.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_C2",
+   "target": "net_SW2_MCU",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "C2.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_LED1_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.15",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R1",
+   "target": "net_LED1_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R1.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R1",
+   "target": "net_LED1_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R1.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED1",
+   "target": "net_LED1_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED1.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_LED2_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.16",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R2",
+   "target": "net_LED2_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R2.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R2",
+   "target": "net_LED2_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R2.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED2",
+   "target": "net_LED2_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED2.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_LED3_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.17",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R3",
+   "target": "net_LED3_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R3.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J10",
+   "target": "net_LED3_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J10.4",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R3",
+   "target": "net_LED3_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R3.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED3",
+   "target": "net_LED3_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED3.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_LED4_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.18",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R4",
+   "target": "net_LED4_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R4.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J10",
+   "target": "net_LED4_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J10.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R4",
+   "target": "net_LED4_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R4.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED4",
+   "target": "net_LED4_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED4.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_LED5_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.19",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R5",
+   "target": "net_LED5_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R5.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J10",
+   "target": "net_LED5_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J10.3",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R5",
+   "target": "net_LED5_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R5.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED5",
+   "target": "net_LED5_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED5.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_LED6_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.23",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R6",
+   "target": "net_LED6_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R6.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R6",
+   "target": "net_LED6_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R6.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED6",
+   "target": "net_LED6_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED6.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_LED7_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.24",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R7",
+   "target": "net_LED7_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R7.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R7",
+   "target": "net_LED7_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R7.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED7",
+   "target": "net_LED7_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED7.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_LED8_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.25",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R8",
+   "target": "net_LED8_D",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R8.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_R8",
+   "target": "net_LED8_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R8.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_LED8",
+   "target": "net_LED8_A",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED8.2",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U1",
+   "target": "net_SELFTEST",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U1.26",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_J11",
+   "target": "net_SELFTEST",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "J11.1",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "part_U2",
+   "target": "net_SPARE_FB",
+   "relation": "connects",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "U2.13",
+   "source_file": "docs/single-lane-circuit-b-netlist.md",
+   "source_location": "\u00a73",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_fuzz_rule",
+   "target": "kn_passive_front",
+   "relation": "motivates",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "motivates",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_fuzz_rule",
+   "target": "kn_buffer_map",
+   "relation": "constrains",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "no buffer upstream of a loop return",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_passive_front",
+   "target": "kn_insert_stage",
+   "relation": "preserves",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "passive path uses the NC bypass wiring",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_buffer_map",
+   "target": "kn_passive_front",
+   "relation": "part_of",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "buffering starts at returns",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_buf_a",
+   "target": "kn_buffer_map",
+   "relation": "part_of",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "buffer map: Loop A",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_buf_b",
+   "target": "kn_buffer_map",
+   "relation": "part_of",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "buffer map: Loop B",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_buf_out",
+   "target": "kn_buffer_map",
+   "relation": "part_of",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "buffer map: output",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_buf_out",
+   "target": "part_K5",
+   "relation": "bypassed_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "dedicated DPDT bypass relay",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_buf_out",
+   "target": "kn_failsafe",
+   "relation": "covers",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "all-off state driven low-Z",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_fxs_passive",
+   "target": "kn_buf_a",
+   "relation": "justified_by",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "return buffers already cover loop-on states",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_vbias",
+   "target": "part_R19",
+   "relation": "generated_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R19/R20 divider + C8/C9",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_vbias",
+   "target": "part_R20",
+   "relation": "generated_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "divider lower half",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_vbias",
+   "target": "part_U2",
+   "relation": "biases",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "all three followers",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_follower",
+   "target": "part_U2",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LMC660AIN quad, 3 used + spare",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_headroom",
+   "target": "part_U2",
+   "relation": "constrains",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "CMOS RRIO output required on 9 V",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_popfree",
+   "target": "part_R24",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "1 M\u03a9 bleeds R24\u2013R37 on switched nodes",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_ac_coupling",
+   "target": "part_C11",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "1 \u00b5F film in/out per buffer (C11\u2013C16)",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_buf_a",
+   "target": "net_LA_RET",
+   "relation": "buffers",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Loop A return enters buffer 1",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_buf_a",
+   "target": "net_BUF1_OUT",
+   "relation": "drives",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "feeds K1/K3 NO_B",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_buf_b",
+   "target": "net_LB_RET",
+   "relation": "buffers",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "buffers",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_buf_b",
+   "target": "net_BUF2_OUT",
+   "relation": "drives",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "feeds K2/K4 NO_B",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_buf_out",
+   "target": "net_BUF3_SRC",
+   "relation": "buffers",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "from K5.NO_A",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_shared_loop_conflict",
+   "target": "kn_prefx_priority",
+   "relation": "resolved_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Pre-FX takes priority",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_prefx_priority",
+   "target": "kn_loop_sharing",
+   "relation": "preserves",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "a loop is never connected at both positions",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_four_state",
+   "target": "kn_prefx_priority",
+   "relation": "arbitrated_by",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "allocation applied per position",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_applied_leds",
+   "target": "kn_prefx_priority",
+   "relation": "documents",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED shows applied, not requested",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_ab_order",
+   "target": "part_K1",
+   "relation": "wired_into",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K1 precedes K2 in chain 1",
+   "source_file": "docs/single-lane-circuit.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_ab_order",
+   "target": "part_K3",
+   "relation": "wired_into",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K3 precedes K4 in chain 2",
+   "source_file": "docs/single-lane-circuit.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_four_state",
+   "target": "part_SW1",
+   "relation": "driven_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "one clean count per press",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_four_state",
+   "target": "part_SW2",
+   "relation": "driven_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "driven_by",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_four_state",
+   "target": "part_K1",
+   "relation": "actuates",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "states map to K1\u2013K4 coils",
+   "source_file": "docs/single-lane-circuit.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_four_state",
+   "target": "part_K4",
+   "relation": "actuates",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "actuates",
+   "source_file": "docs/single-lane-circuit.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_prefx_priority",
+   "target": "part_U1",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "firmware allocation",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_prefx_priority",
+   "target": "part_K3",
+   "relation": "governs",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "K3 = A2P = Y1 and not X1",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_prefx_priority",
+   "target": "part_K4",
+   "relation": "governs",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "K4 = B2P = Y2 and not X2",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_truth_table",
+   "target": "kn_four_state",
+   "relation": "accepts",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "16 rows incl. interlock rows",
+   "source_file": "docs/single-lane-circuit.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_truth_table",
+   "target": "kn_applied_leds",
+   "relation": "documents",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "documents",
+   "source_file": "docs/single-lane-circuit.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_insert_stage",
+   "target": "part_K1",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K1\u2013K4 loop inserts",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_insert_stage",
+   "target": "part_K5",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K5 = same pattern with buffer as the loop",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_loop_sharing",
+   "target": "net_LA_SEND",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LA_SEND ties K1.NO_A + K3.NO_A",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_loop_sharing",
+   "target": "net_BUF1_OUT",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "buffered return feeds both NO_B",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_bbm",
+   "target": "part_K1",
+   "relation": "inherent_to",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "relay armature is break-before-make",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_tip_isolation",
+   "target": "part_K3",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "unselected NO contacts float",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_failsafe",
+   "target": "kn_k5_bypass",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "buffer-bypass relay de-energizes to hardwire",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_failsafe",
+   "target": "kn_pulldown_boot",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "coils off during boot/ISP",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_failsafe",
+   "target": "kn_watchdog",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "hang \u2192 reset \u2192 boot state",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_failsafe",
+   "target": "kn_nc_convention",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "contact wiring, not code",
+   "source_file": "docs/single-lane-circuit.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_k5_bypass",
+   "target": "part_K5",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "implemented_by",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_pulldown_boot",
+   "target": "part_R14",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "R14\u2013R18 base pull-downs",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_watchdog",
+   "target": "part_U1",
+   "relation": "requires",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "AVR hardware watchdog",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_loops_drop_buffers",
+   "target": "kn_failsafe",
+   "relation": "enables",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "return buffers leave circuit with their loops",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_nc_convention",
+   "target": "part_K5",
+   "relation": "wired_into",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "K5 NC bridge = hardwire",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_failsafe",
+   "target": "kn_passive_front",
+   "relation": "preserves",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "front end passes with DC removed",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_mcu_control",
+   "target": "kn_rev_a",
+   "relation": "replaces",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "CMOS control archived, MCU takes over",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_mcu_control",
+   "target": "kn_lane_param",
+   "relation": "enables",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "lane-agnostic firmware",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_mcu_control",
+   "target": "kn_watchdog",
+   "relation": "requires",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "fail-safe spec",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_mcu_control",
+   "target": "kn_selftest",
+   "relation": "enables",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "strap-driven QC walk",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_mcu_control",
+   "target": "kn_midi_roadmap",
+   "relation": "enables",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "spare UART/I\u00b2C",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_alloc_first",
+   "target": "part_U1",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "allocation before relay/LED writes",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_alloc_first",
+   "target": "kn_shared_loop_conflict",
+   "relation": "prevents",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "double-drive impossible by ordering",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_debounce",
+   "target": "part_U1",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "~25 ms software debounce",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_selftest",
+   "target": "part_J11",
+   "relation": "triggered_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "PC3 strap to GND at boot",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_isp_leds",
+   "target": "part_J10",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "LED3\u20135 share MOSI/MISO/SCK",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_tuner_spare",
+   "target": "part_U2",
+   "relation": "parked_in",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "fourth amplifier as VBIAS follower",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_lane_param",
+   "target": "kn_custom_lanes",
+   "relation": "enables",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "lanes add relays/jacks only",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_buf_out",
+   "target": "kn_lane_param",
+   "relation": "enables",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "one stage before the selector feeds every TO port",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_custom_lanes",
+   "target": "kn_rack",
+   "relation": "offered_in",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "up to 8 lanes rack",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_stompbox",
+   "target": "kn_rack",
+   "relation": "complements",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "same platform, two form factors",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_remote_sw",
+   "target": "kn_unplug_safe",
+   "relation": "requires",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "pull-up reads released",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_remote_sw",
+   "target": "part_SW1",
+   "relation": "connects_to",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "same two nets as onboard stomps",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_patch_panel",
+   "target": "kn_remote_sw",
+   "relation": "extends",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "footswitch jacks on the panel",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_patch_panel",
+   "target": "net_IN_TIP",
+   "relation": "normalled_to",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "front duplicate of Instrument IN",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_made_to_order",
+   "target": "kn_selftest",
+   "relation": "requires",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "per-order truth-table verification",
+   "source_file": "docs/multi-lane-prototype.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_made_to_order",
+   "target": "kn_custom_lanes",
+   "relation": "offers",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "studios order specific counts",
+   "source_file": "docs/multi-lane-prototype.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_rack_rails",
+   "target": "kn_rack",
+   "relation": "belongs_to",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "internal bipolar supply",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_center_neg",
+   "target": "kn_protected_rail",
+   "relation": "feeds",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "raw input to 1N5817",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_protected_rail",
+   "target": "part_D6",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "reverse-polarity protection",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_protected_rail",
+   "target": "part_K1",
+   "relation": "powers",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "all coil A2s on 9V_PROT",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_logic_rail",
+   "target": "part_U3",
+   "relation": "implemented_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "78L05",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_logic_rail",
+   "target": "part_U1",
+   "relation": "powers",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "MCU + LEDs",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_rev_a",
+   "target": "kn_truth_table",
+   "relation": "donates",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "allocation truth tables unchanged in Rev B",
+   "source_file": "docs/single-lane-circuit.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_rev_a",
+   "target": "kn_rev_a_sch",
+   "relation": "verified_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "netlist diff + clean ERC",
+   "source_file": "docs/single-lane-circuit.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_rev_a_sch",
+   "target": "net_IN_TIP",
+   "relation": "captured_in",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "full contact/netlist preserved in KiCad",
+   "source_file": "docs/single-lane-circuit.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_bench_proto",
+   "target": "kn_debounce",
+   "relation": "informs",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "established the switch/driver pattern",
+   "source_file": "docs/architecture.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_netlist_diff",
+   "target": "kn_rev_a_sch",
+   "relation": "accepts",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "accepts",
+   "source_file": "docs/single-lane-circuit.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_netlist_diff",
+   "target": "part_U1",
+   "relation": "accepts",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "Rev B schematic will be diffed the same way",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_erc_zero",
+   "target": "kn_netlist_diff",
+   "relation": "applies_to",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "zero-violation bar",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_staged_bringup",
+   "target": "kn_build_gate",
+   "relation": "follows",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "bench order mirrors the guide",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_power_budget",
+   "target": "kn_coil_max",
+   "relation": "bounded_by",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "3 coils worst case",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_coil_max",
+   "target": "kn_prefx_priority",
+   "relation": "follows_from",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "interlock caps active loops at 2",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_build_gate",
+   "target": "kn_failsafe",
+   "relation": "accepts",
+   "_origin": "ast",
+   "confidence": "EXTRACTED",
+   "confidence_score": 1.0,
+   "context": "power-loss check is a gate item",
+   "source_file": "docs/build-guide.md",
+   "source_location": "",
+   "weight": 1.0
+  },
+  {
+   "source": "kn_truth_table",
+   "target": "kn_selftest",
+   "relation": "verified_by",
+   "_origin": "ast",
+   "confidence": "INFERRED",
+   "confidence_score": 0.85,
+   "context": "strap walks all rows",
+   "source_file": "docs/single-lane-circuit-b.md",
+   "source_location": "",
+   "weight": 1.0
+  }
+ ],
+ "hyperedges": [],
+ "built_at_commit": "41d517b583a82520ceed6c4634cd0d8ec517422d"
+}
